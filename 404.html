@@ -1,146 +1,246 @@
-<html>
-  <head>
-    <script type="text/javascript">
-      var canvas = document.getElementById('canvas'),
-          context = canvas.getContext('2d'),
-          height = canvas.height = 256,
-          width = canvas.width = height,
-          bcontext = 'getCSSCanvasContext' in document ? document.getCSSCanvasContext('2d', 'noise', width, height) : context;
-      noise();
-      
-      function noise() {
-          requestAnimationFrame(noise);
-          var idata = context.getImageData(0, 0, width, height);
-          for (var i = 0; i < idata.data.length; i += 4) {
-              idata.data[i] = idata.data[i + 1] = idata.data[i + 2] = Math.floor(Math.random() * 255);
-              idata.data[i + 3] = 255;
-          }
-          bcontext.putImageData(idata, 0, 0);
-      }
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
     </script>
-    <style type="text/css">
-      @import url(https://fonts.googleapis.com/css?family=Oswald:400, 700);
-       html, body {
-          height: 100%;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-          background: #242424;
-          font-family:'Oswald', sans-serif;
-          background: -webkit-canvas(noise);
-          background: -moz-element(#canvas);
-          overflow: hidden;
-      }
-      html::after {
-          content:'';
-          background: radial-gradient(circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-      }
-      .center {
-          height: 400px;
-          width: 500px;
-          position: absolute;
-          top: calc(50% - 200px);
-          left: calc(50% - 250px);
-          text-align: center;
-      }
-      h1, p {
-          margin: 0;
-          padding: 0;
-          -webkit-animation: funnytext 4s ease-in-out infinite;
-          animation: funnytext 4s ease-in-out infinite;
-      }
-      h1 {
-          font-size: 16rem;
-          color: rgba(0, 0, 0, 0.3);
-          -webkit-filter: blur(3px);
-          filter: blur(3px);
-      }
-      p {
-          font-size: 2rem;
-          color: rgba(0, 0, 0, 0.6);
-      }
-      body::after, body::before {
-          content:' ';
-          display:block;
-          position:absolute;
-          left:0;
-          right:0;
-          top:-4px;
-          height:4px;
-          -webkit-animation: scanline 8s linear infinite;
-          animation: scanline 8s linear infinite;
-          opacity: 0.33;
-          background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 0)), -webkit-canvas(noise);
-          background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 0)), -moz-element(#canvas);
-      }
-      body::before {
-          -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-      }
-      @-webkit-keyframes scanline {
-          0% {
-              top:-5px;
-          }
-          100% {
-              top:100%;
-          }
-      }
-      @keyframes scanline {
-          0% {
-              top:-5px;
-          }
-          100% {
-              top:100%;
-          }
-      }
-      @-webkit-keyframes funnytext {
-          0% {
-              color: rgba(0, 0, 0, 0.3);
-              -webkit-filter: blur(3px);
-          }
-          30% {
-              color: rgba(0, 0, 0, 0.5);
-              -webkit-filter: blur(1px);
-          }
-          65% {
-              color: rgba(0, 0, 0, 0.2);
-              -webkit-filter: blur(5px);
-          }
-          100% {
-              color: rgba(0, 0, 0, 0.3);
-              -webkit-filter: blur(3px);
-          }
-      }
-      @keyframes funnytext {
-          0% {
-              color: rgba(0, 0, 0, 0.3);
-              filter: blur(3px);
-          }
-          30% {
-              color: rgba(0, 0, 0, 0.5);
-              filter: blur(1px);
-          }
-          65% {
-              color: rgba(0, 0, 0, 0.2);
-              filter: blur(5px);
-          }
-          100% {
-              color: rgba(0, 0, 0, 0.3);
-              filter: blur(3px);
-          }
-      }
+
+    <!-- SEO Optimization Meta Tags -->
+    <title>Página No Encontrada | Iglesia Bautista Sumapaz</title>
+    <meta name="description" content="Error 404. La página que busca no existe en el sitio de la Iglesia Bautista Sumapaz.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Fonts (Outfit for Headers, Inter for Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+    <!-- Inline Script to apply dark theme immediately to avoid flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <style>
+        /* Custom styles for the 404 layout */
+        .error-404-section {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 120px;
+            padding-bottom: 80px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .error-code {
+            font-family: var(--font-heading);
+            font-size: clamp(80px, 15vw, 160px);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+        }
+        .main-header {
+            background: var(--surface-glass);
+            backdrop-filter: blur(16px);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .main-header .logo-text {
+            color: var(--primary);
+        }
+        [data-theme="dark"] .main-header .logo-text {
+            color: #ffffff;
+        }
+        .main-header .nav-link {
+            color: var(--text-color);
+        }
+        .main-header .nav-link:hover {
+            color: var(--accent);
+        }
+        .main-header .theme-toggle {
+            color: var(--text-color);
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+        [data-theme="dark"] .main-header .theme-toggle {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
     </style>
-  </head>
-  <body>
-    <canvas id="canvas" hidden></canvas>
-      <div class="center">
-          <h1>404</h1>
-          <p>NO SE ENCONTRÓ LA PÁGINA.</p>
-      </div>
-  </body>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="index.html#inicio" class="logo-link">
+                <img src="assets/logo.svg" alt="Iglesia Bautista Sumapaz Logo" class="nav-logo" id="header-logo">
+                <span class="logo-text">Sumapaz</span>
+            </a>
+
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menú</span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <nav class="primary-navigation" id="primary-navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#social-hub" class="nav-link">Social Media</a></li>
+                    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="index.html#ministerios" class="nav-link">Ministerios</a></li>
+                    <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="index.html#plan-biblico" class="nav-link">Plan Bíblico</a></li>
+                    <li><a href="index.html#galeria" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728A9 9 0 115.636 5.636m12.728 12.728L12 12" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <a href="index.html#contacto" class="btn btn-primary btn-nav">Visítanos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- 404 Hero Section -->
+        <section class="error-404-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85)), url('assets/hero_bg.jpg');">
+            <div class="hero-content container">
+                <div class="error-code">404</div>
+                <div class="hero-badge" style="border-color: rgba(20, 198, 155, 0.3); background-color: rgba(0, 102, 128, 0.4);">
+                    Página No Encontrada
+                </div>
+                <h1 class="hero-title" style="font-size: clamp(24px, 4vw, 42px); margin-bottom: 16px;">
+                    Lo sentimos, este camino no existe
+                </h1>
+                <p class="hero-description" style="margin-bottom: 32px; font-size: 17px;">
+                    La página que estás buscando puede haber sido eliminada, cambiado de nombre o no estar disponible temporalmente.
+                </p>
+                <div class="hero-buttons">
+                    <a href="index.html" class="btn btn-primary btn-lg">Volver al Inicio</a>
+                    <a href="index.html#contacto" class="btn btn-secondary btn-lg">Contactar Soporte</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html#inicio" class="logo-link">
+                    <img src="assets/logo.svg" alt="Iglesia Bautista Sumapaz" class="footer-logo">
+                    <span class="logo-text">Iglesia Bautista Sumapaz</span>
+                </a>
+                <p class="footer-tagline">Predicando la Palabra de Dios con claridad y fidelidad. Una comunidad bautista
+                    bíblica en el corazón de Colombia.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/iglesiabautistasumapaz" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@IglesiaBautistaSumapaz" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <g transform="translate(2.4, 2.4) scale(0.8)">
+                                <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </g>
+                        </svg>
+                    </a>
+                    <a href="https://open.spotify.com/show/2WONi2DdFl5oHKLg0FNgMj" target="_blank"
+                        rel="noopener noreferrer" aria-label="Spotify">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.893-.982-.336.075-.67-.136-.746-.472-.075-.337.136-.67.472-.746 3.852-.878 7.144-.504 9.822 1.134.295.18.387.565.207.86zm1.225-2.72c-.227.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.073-1.185-.413.125-.847-.107-.972-.52-.125-.413.107-.847.52-.972 3.657-1.11 8.224-.567 11.34 1.348.366.226.486.706.26 1.073zm.106-2.833C14.484 8.78 8.74 8.59 5.405 9.602c-.512.155-1.046-.135-1.202-.647-.156-.512.135-1.047.647-1.202 3.82-1.16 10.158-.942 14.15 1.43.46.273.61.87.337 1.33-.273.46-.87.61-1.33.337z" />
+                        </svg>
+                    </a>
+                    <a href="https://linktr.ee/sumapaz" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <g transform="translate(2.4, 2.4) scale(0.8)">
+                                <path d="m13.73635 5.85251 4.00467-4.11665 2.3248 2.3808-4.20064 4.00466h5.9085v3.30473h-5.9365l4.22865 4.10766-2.3248 2.3338L12.0005 12.099l-5.74052 5.76852-2.3248-2.3248 4.22864-4.10766h-5.9375V8.12132h5.9085L3.93417 4.11666l2.3248-2.3808 4.00468 4.11665V0h3.4727zm-3.4727 10.30614h3.4727V24h-3.4727z" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Nuestra Iglesia</h3>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="index.html#ministerios">Ministerios</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#galeria">Galería de Fotos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="https://open.spotify.com/show/2WONi2DdFl5oHKLg0FNgMj" target="_blank" rel="noopener noreferrer">Escuchar Sermones</a></li>
+                    <li><a href="https://mealegroentupalabra.wordpress.com/la-biblia-en-un-ano/" target="_blank" rel="noopener noreferrer">Plan de Lectura Anual</a></li>
+                    <li><a href="https://mealegroentupalabra.wordpress.com/" target="_blank" rel="noopener noreferrer">Blog "Me Alegro en Tu Palabra"</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2010 - 2026 Iglesia Bautista Sumapaz. Todos los derechos reservados.</p>
+                <p>Fusagasugá, Colombia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- App JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+
 </html>
