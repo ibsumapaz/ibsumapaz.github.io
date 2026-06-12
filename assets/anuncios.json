@@ -6,5 +6,14 @@
     "reflexion": "Les invitamos a compartir un tiempo especial como iglesia para la celeberación del bautismo y la cena del Señor. Estaremos en Chinauta compartiendo tiempo de comunión y de edificación como iglesia. ¡Los esperamos!",
     "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/bautismo.jpg",
     "fechaEvento": "2026-06-14 09:00"
+  },
+  {
+    "id": 102,
+    "titulo": "Reunión de Oración Virtual",
+    "fecha": "Publicado hoy",
+    "reflexion": "Acompáñanos en nuestro tiempo semanal...",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/oracion-virtual.png",
+    "fechaEvento": "06:00",
+    "recurrencia": "martes"
   }
 ]
