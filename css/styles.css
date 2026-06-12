@@ -355,8 +355,8 @@ section {
 }
 
 .nav-logo {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
     transition: transform var(--transition-normal);
 }
 
@@ -367,7 +367,7 @@ section {
 .logo-text {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     color: #ffffff;
     letter-spacing: -0.5px;
     transition: color var(--transition-normal);
@@ -1190,7 +1190,7 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
 }
 
