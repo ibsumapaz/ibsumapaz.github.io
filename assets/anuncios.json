@@ -4,7 +4,8 @@
     "titulo": "Reunión Especial de Jóvenes",
     "fecha": "Sábado, 13 de Junio",
     "reflexion": "Les invitamos a nuestra reunión semanal de jóvenes a las 3:00 PM. Tendremos un tiempo de comunión, alabanza y estudio de la Palabra de Dios. ¡Trae a un amigo!",
-    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/jovenes.jpg"
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/jovenes.jpg",
+    "fechaEvento": "2026-06-13 15:00"
   },
   {
     "id": 2,
@@ -19,5 +20,29 @@
     "fecha": "Viernes y Sábados 3:00 PM",
     "reflexion": "Acompáñanos a servir y llevar la Palabra de Dios a la comunidad del Galán. Estaremos realizando actividades recreativas y compartiendo el mensaje de salvación.",
     "imagenUrl": "https://iglesiabautistasumapaz.org/assets/labor_social.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Conferencia de Parejas: Firmes en Amor",
+    "fecha": "Sábado, 27 de Junio",
+    "reflexion": "Un tiempo especial de edificación, charlas y comunión para matrimonios y parejas. Tendremos expositores invitados y una cena especial.",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/comunidad_oracion.jpg",
+    "fechaEvento": "2026-06-27 18:30"
+  },
+  {
+    "id": 5,
+    "titulo": "Servicio Especial de Acción de Gracias",
+    "fecha": "Domingo, 14 de Junio",
+    "reflexion": "Acompáñanos a dar gracias al Señor por sus bondades en este primer semestre del año. Tendremos un tiempo especial de testimonios y alabanza.",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/labor_social.jpg",
+    "fechaEvento": "2026-06-14"
+  },
+  {
+    "id": 6,
+    "titulo": "Campamento de Verano 2026",
+    "fecha": "Del 15 al 18 de Julio",
+    "reflexion": "¡Inscripciones abiertas! Prepárate para cuatro días llenos de aventuras, conferencias, deportes y encuentros profundos con la Palabra de Dios.",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/jovenes.jpg",
+    "fechaEvento": "2026-07-15 08:00"
   }
 ]
