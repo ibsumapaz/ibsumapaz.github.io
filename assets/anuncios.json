@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "titulo": "Reunión Especial de Jóvenes",
+    "fecha": "Sábado, 13 de Junio",
+    "reflexion": "Les invitamos a nuestra reunión semanal de jóvenes a las 3:00 PM. Tendremos un tiempo de comunión, alabanza y estudio de la Palabra de Dios. ¡Trae a un amigo!",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/jovenes.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Tiempo de Oración en los Hogares",
+    "fecha": "Miércoles y Jueves",
+    "reflexion": "Acompáñanos en nuestros grupos de oración en los hogares. Un tiempo para clamar juntos, edificar nuestra fe y compartir en comunidad. Miércoles 6:30 PM / Jueves 2:30 PM.",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/comunidad_oracion.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "Ministerio del Galán",
+    "fecha": "Viernes y Sábados 3:00 PM",
+    "reflexion": "Acompáñanos a servir y llevar la Palabra de Dios a la comunidad del Galán. Estaremos realizando actividades recreativas y compartiendo el mensaje de salvación.",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/labor_social.jpg"
+  }
+]

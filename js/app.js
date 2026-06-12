@@ -328,11 +328,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Creemos firmemente en el poder del clamor y la vida en comunidad. En estos grupos en hogares compartimos un café, estudiamos las Escrituras de manera informal y dedicamos tiempo a orar los unos por los otros, fortaleciendo el cuidado mutuo pastoral."
         },
         social: {
-            title: "Ministerio de Labor Social",
+            title: "Ministerio del Galán",
             tag: "Servicio",
             img: "assets/labor_social.jpg",
-            schedule: "Sábados alternos (Contáctanos para sumarte como voluntario).",
-            desc: "Llevamos el amor de Cristo a la práctica. Trabajamos en una comunidad vulnerable de la periferia, donde realizamos reuniones recreativas, juegos, refrigerios y lecciones bíblicas dinámicas para niños y adolescentes con el fin de apoyarlos en sus entornos de vida."
+            schedule: "Viernes y Sábados.",
+            desc: "Llevamos el amor de Cristo a la práctica. Trabajamos en la comunidad, donde realizamos reuniones recreativas, juegos, refrigerios y lecciones bíblicas dinámicas para niños y adolescentes con el fin de apoyarlos en sus entornos de vida."
         },
         alabanza: {
             title: "Alabanza y Adoración",
