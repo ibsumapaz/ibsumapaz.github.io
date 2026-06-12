@@ -2289,14 +2289,250 @@ section {
 }
 
 /* ----------------------------------------------------
+   17.5. MOBILE APPS SECTION
+   ---------------------------------------------------- */
+.apps-section {
+    background-color: var(--surface);
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.app-card {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.app-card-body {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.app-info-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-screenshot-column {
+    flex-shrink: 0;
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Phone Mockup Styling */
+.phone-mockup {
+    width: 180px;
+    height: 370px;
+    border-radius: 28px;
+    border: 7px solid #1e2d33; /* Dark slate phone border */
+    background-color: #000000;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), inset 0 2px 8px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-slow);
+}
+
+.app-card:hover .phone-mockup {
+    transform: translateY(-8px) rotate(-1.5deg);
+}
+
+/* Notch/speaker area */
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 14px;
+    background-color: #1e2d33;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 10;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+.app-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.app-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    background-color: var(--primary-glow);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-normal), background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.app-card:hover .app-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.app-icon-wrapper.reading-plan-icon {
+    background-color: hsla(50, 86%, 46%, 0.15);
+    color: var(--gold);
+}
+
+.app-card:hover .app-icon-wrapper.reading-plan-icon {
+    background-color: var(--gold);
+    color: #121815;
+}
+
+.app-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+}
+
+.badge-app {
+    background-color: var(--primary-glow);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .badge-app {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+}
+
+.badge-app-plan {
+    background-color: var(--gold-glow);
+    color: var(--gold);
+}
+
+.app-card h3 {
+    font-size: 26px;
+    margin-bottom: 16px;
+    color: var(--text-color);
+}
+
+.app-description {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    flex-grow: 1;
+}
+
+.app-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.feature-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.app-card:hover .feature-tag {
+    background-color: var(--surface-card);
+    border-color: rgba(0, 102, 128, 0.15);
+}
+
+[data-theme="dark"] .app-card:hover .feature-tag {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.feature-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-round);
+    background-color: var(--accent);
+}
+
+.app-download-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-download {
+    gap: 10px;
+    width: 100%;
+}
+
+.btn-icon {
+    flex-shrink: 0;
+}
+
+.app-compatibility {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* ----------------------------------------------------
    18. RESPONSIVE MEDIA QUERIES
    ---------------------------------------------------- */
+@media (max-width: 1200px) {
+    .app-card {
+        padding: 36px;
+    }
+    .app-card-body {
+        gap: 20px;
+    }
+    .app-screenshot-column {
+        width: 160px;
+    }
+    .phone-mockup {
+        width: 150px;
+        height: 310px;
+        border-width: 6px;
+        border-radius: 22px;
+    }
+    .phone-screen {
+        border-radius: 16px;
+    }
+}
+
 @media (max-width: 1024px) {
     .social-grid,
     .ministries-grid,
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+    
+    .apps-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
     }
     
     .about-grid {
@@ -2473,6 +2709,45 @@ section {
     
     .prev-btn { left: 10px; }
     .next-btn { right: 10px; }
+    
+    .app-card {
+        padding: 32px;
+    }
+    
+    .app-card h3 {
+        font-size: 22px;
+    }
+
+    .app-card-body {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .app-card-header {
+        justify-content: center;
+        gap: 16px;
+    }
+    
+    .app-features {
+        justify-content: center;
+    }
+    
+    .app-screenshot-column {
+        width: 100%;
+    }
+    
+    .phone-mockup {
+        width: 180px;
+        height: 370px;
+        margin: 0 auto;
+        border-width: 7px;
+        border-radius: 28px;
+    }
+
+    .phone-screen {
+        border-radius: 20px;
+    }
 }
 
 @media (max-width: 480px) {
