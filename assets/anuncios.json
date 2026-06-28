@@ -1,11 +1,27 @@
 [
   {
     "id": 1,
-    "titulo": "Programa Especial de Bautismos",
-    "fecha": "Domingo, 14 de Junio",
-    "reflexion": "Les invitamos a compartir un tiempo especial como iglesia para la celeberación del bautismo y la cena del Señor. Estaremos en Chinauta compartiendo tiempo de comunión y de edificación como iglesia. ¡Los esperamos!",
-    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/bautismo.jpg",
-    "fechaEvento": "2026-06-14 09:00"
+    "titulo": "Reunión de Damas",
+    "fecha": "Sábado, 11 de Julio",
+    "reflexion": "Invitamos a las damas a participar de nuestra reunión mensual. Será un tiempo especial de intimidad con Dios y comunión. ¡Las esperamos!",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/damas.png",
+    "fechaEvento": "2026-07-11 15:00"
+  },
+  {
+    "id": 2,
+    "titulo": "Reunión de Varones",
+    "fecha": "Sábado, 18 de Julio",
+    "reflexion": "Invitamos a los varones a participar de nuestra reunión mensual. Continuaremos nuestro estudio bíblico Siervos para su gloria y compartiremos tiempo de oración. ¡Los esperamos!",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/varones.png",
+    "fechaEvento": "2026-07-18 15:00"
+  },
+  {
+    "id": 3,
+    "titulo": "Día de la Familia",
+    "fecha": "Domingo, 26 de Julio",
+    "reflexion": "Les invitamos a compartir un tiempo especial como iglesia para la celeberación del día de la familia. ¡Los esperamos!",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/familia.png",
+    "fechaEvento": "2026-07-26 09:30"
   },
   {
     "id": 102,
