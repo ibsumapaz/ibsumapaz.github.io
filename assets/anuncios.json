@@ -1,11 +1,19 @@
 [
   {
     "id": 3,
-    "titulo": "Día de la Familia",
-    "fecha": "Domingo, 26 de Julio",
-    "reflexion": "Les invitamos a compartir un tiempo especial como iglesia para la celeberación del día de la familia. ¡Los esperamos!",
-    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/familia.png",
-    "fechaEvento": "2026-07-26 09:30"
+    "titulo": "Reunión de Damas",
+    "fecha": "Sábado, 15 de agosto",
+    "reflexion": "Las invitamos a compartir un tiempo especial como mujeres de Dios. ¡Las esperamos!",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/damas.png",
+    "fechaEvento": "2026-08-15 15:00"
+  },
+  {
+    "id": 4,
+    "titulo": "Reunión de Varones",
+    "fecha": "Sábado, 22 de agosto",
+    "reflexion": "Los invitamos a compartir un tiempo especial como hombres de Dios. ¡Los esperamos!",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/varones.png",
+    "fechaEvento": "2026-08-22 15:00"
   },
   {
     "id": 101,
