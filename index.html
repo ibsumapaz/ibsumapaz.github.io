@@ -110,12 +110,7 @@
                 <span class="logo-text">Sumapaz</span>
             </a>
 
-            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-                <span class="sr-only">Menú</span>
-                <span class="hamburger-bar"></span>
-            </button>
-
-            <nav class="primary-navigation" id="primary-navigation">
+            <nav class="primary-navigation" id="primary-navigation" aria-label="Navegación principal">
                 <ul class="nav-list">
                     <li><a href="#inicio" class="nav-link active">Inicio</a></li>
                     <li><a href="#social-hub" class="nav-link">Social Media</a></li>
@@ -127,6 +122,9 @@
                     <li><a href="#galeria" class="nav-link">Galería</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
+                <div class="mobile-nav-cta">
+                    <a href="#contacto" class="btn btn-primary btn-mobile-cta">Visítanos</a>
+                </div>
             </nav>
 
             <div class="header-actions">
@@ -143,6 +141,11 @@
                     </svg>
                 </button>
                 <a href="#contacto" class="btn btn-primary btn-nav">Visítanos</a>
+                <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"
+                    aria-label="Abrir menú de navegación">
+                    <span class="sr-only">Menú</span>
+                    <span class="hamburger-bar"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -394,16 +397,40 @@
                                 <p>Cuidado mutuo, compañerismo amoroso y edificación grupal.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Declaration of Faith Button -->
-                        <div class="about-actions" style="margin-top: 32px;">
-                            <button id="open-declaracion-modal" class="btn btn-outline">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"
-                                    style="margin-right: 8px; vertical-align: middle;">
+                <!-- Featured Declaration of Faith Banner -->
+                <div class="declaracion-banner-box">
+                    <div class="declaracion-banner-inner">
+                        <div class="declaracion-banner-left">
+                            <div class="declaracion-badge">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                                     <path
                                         d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
                                 </svg>
-                                Conoce Nuestra Declaración de Fe
+                                Fundamentos Doctrinales
+                            </div>
+                            <h3 class="declaracion-banner-title">Nuestra Declaración de Fe y Creencias</h3>
+                            <p class="declaracion-banner-desc">
+                                Conoce los principios bíblicos esenciales que fundamentan nuestra fe, ministerio y vida
+                                de iglesia.
+                            </p>
+                        </div>
+                        <div class="declaracion-banner-right">
+                            <button id="open-declaracion-modal" class="btn btn-gold-prominent open-declaracion-modal">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                                    class="btn-icon-svg">
+                                    <path
+                                        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                                </svg>
+                                <span>Conoce Nuestra Declaración de Fe</span>
+                                <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
                             </button>
                         </div>
                     </div>
@@ -761,9 +788,12 @@
                                         </svg>
                                         Descargar para Android (APK)
                                     </a>
-                                    <a href="https://youtube.com/shorts/JXOZL3YsGV0?si=9oM7huWuBEZTTfnN" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-download btn-tutorial">
-                                        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                            <path d="M21 3H3c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm-9 12V9l5 3-5 3z"/>
+                                    <a href="https://youtube.com/shorts/JXOZL3YsGV0?si=9oM7huWuBEZTTfnN" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-outline btn-download btn-tutorial">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M21 3H3c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm-9 12V9l5 3-5 3z" />
                                         </svg>
                                         Ver Tutorial de Instalación
                                     </a>

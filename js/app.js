@@ -12,38 +12,77 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.main-header');
     const navToggle = document.querySelector('.mobile-nav-toggle');
     const primaryNav = document.getElementById('primary-navigation');
-    const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
 
     // Fixed Header Scroll Class
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.classList.add('scrolled');
+            header?.classList.add('scrolled');
         } else {
-            header.classList.remove('scrolled');
+            header?.classList.remove('scrolled');
         }
         highlightActiveSection();
     });
 
+    // Helper functions to open and close mobile drawer
+    const openMobileMenu = () => {
+        if (!navToggle || !primaryNav) return;
+        navToggle.setAttribute('aria-expanded', 'true');
+        primaryNav.classList.add('active');
+        document.body.classList.add('nav-open');
+    };
+
+    const closeMobileMenu = () => {
+        if (!navToggle || !primaryNav) return;
+        navToggle.setAttribute('aria-expanded', 'false');
+        primaryNav.classList.remove('active');
+        document.body.classList.remove('nav-open');
+    };
+
     // Mobile Hamburger Toggle
     if (navToggle && primaryNav) {
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             const isOpened = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !isOpened);
-            primaryNav.classList.toggle('active');
+            if (isOpened) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
 
-        // Close menu when clicking on a link
-        navLinks.forEach(link => {
+        // Close menu when clicking on any link inside the navigation drawer
+        primaryNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navToggle.setAttribute('aria-expanded', 'false');
-                primaryNav.classList.remove('active');
+                closeMobileMenu();
             });
+        });
+
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && primaryNav.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (primaryNav.classList.contains('active') && !primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu if viewport resized to desktop breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024 && primaryNav.classList.contains('active')) {
+                closeMobileMenu();
+            }
         });
     }
 
     // Scrollspy Highlight Navigation Links
     function highlightActiveSection() {
+        if (!sections.length) return;
         let scrollY = window.pageYOffset;
 
         sections.forEach(current => {
@@ -52,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionId = current.getAttribute('id');
 
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelector(`.nav-list a[href*=${sectionId}]`)?.classList.add('active');
+                document.querySelector(`.nav-list a[href$="#${sectionId}"]`)?.classList.add('active');
             } else {
-                document.querySelector(`.nav-list a[href*=${sectionId}]`)?.classList.remove('active');
+                document.querySelector(`.nav-list a[href$="#${sectionId}"]`)?.classList.remove('active');
             }
         });
     }
@@ -402,14 +441,16 @@ document.addEventListener('DOMContentLoaded', () => {
        6b. DECLARATION OF FAITH MODAL
        ========================================== */
     const declaracionModal = document.getElementById('declaracion-modal');
-    const openDeclaracionBtn = document.getElementById('open-declaracion-modal');
+    const openDeclaracionBtns = document.querySelectorAll('#open-declaracion-modal, .open-declaracion-modal');
     const closeDeclaracionBtn = document.getElementById('declaracion-modal-close');
 
-    if (openDeclaracionBtn && declaracionModal) {
-        openDeclaracionBtn.addEventListener('click', () => {
-            declaracionModal.classList.add('active');
-            declaracionModal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
+    if (declaracionModal && openDeclaracionBtns.length) {
+        openDeclaracionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                declaracionModal.classList.add('active');
+                declaracionModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            });
         });
     }
 
