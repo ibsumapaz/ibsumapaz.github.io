@@ -3387,6 +3387,38 @@ section {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        z-index: 1100;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .logo-link {
+        position: relative;
+        z-index: 1100;
+    }
+
+    .header-actions {
+        position: relative;
+        z-index: 1100;
+    }
+
+    body.nav-open .main-header,
+    body.nav-open .main-header.scrolled,
+    body.nav-open .main-header.header-solid {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-bottom-color: transparent !important;
+    }
+
+    body.nav-open .logo-text {
+        color: #ffffff !important;
+    }
+
+    body.nav-open .theme-toggle {
+        color: #ffffff !important;
+        background-color: rgba(255, 255, 255, 0.1) !important;
     }
 
     .hamburger-bar,
@@ -3447,6 +3479,9 @@ section {
         right: 0;
         bottom: 0;
         left: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
         background-color: rgba(4, 18, 22, 0.98); /* Deep dark blue-teal backdrop */
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -3455,6 +3490,7 @@ section {
         transform: translateX(100%);
         transition: transform var(--transition-normal), visibility var(--transition-normal);
         visibility: hidden;
+        pointer-events: none;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -3465,6 +3501,7 @@ section {
     .primary-navigation.active {
         transform: translateX(0);
         visibility: visible;
+        pointer-events: auto;
     }
 
     .nav-list {
@@ -3478,23 +3515,45 @@ section {
         padding: 0;
     }
 
-    .nav-link {
+    .primary-navigation .nav-link,
+    .main-header.scrolled .primary-navigation .nav-link,
+    .main-header.header-solid .primary-navigation .nav-link,
+    [data-theme="dark"] .main-header.scrolled .primary-navigation .nav-link,
+    [data-theme="dark"] .main-header.header-solid .primary-navigation .nav-link {
         font-size: 18px;
         font-weight: 600;
-        color: rgba(255, 255, 255, 0.85);
-        padding: 8px 0;
+        color: rgba(255, 255, 255, 0.88) !important;
+        padding: 10px 0;
         width: 100%;
         display: block;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+        transition: color var(--transition-fast), padding-left var(--transition-fast);
     }
 
-    .nav-link:hover,
-    .nav-link.active {
-        color: var(--gold);
+    .primary-navigation .nav-link:hover,
+    .primary-navigation .nav-link:focus,
+    .main-header.scrolled .primary-navigation .nav-link:hover,
+    .main-header.header-solid .primary-navigation .nav-link:hover,
+    [data-theme="dark"] .main-header.scrolled .primary-navigation .nav-link:hover,
+    [data-theme="dark"] .main-header.header-solid .primary-navigation .nav-link:hover {
+        color: #ffffff !important;
+        padding-left: 6px;
     }
 
-    .nav-link::after {
-        display: none;
+    .primary-navigation .nav-link.active,
+    .main-header.scrolled .primary-navigation .nav-link.active,
+    .main-header.header-solid .primary-navigation .nav-link.active,
+    [data-theme="dark"] .main-header.scrolled .primary-navigation .nav-link.active,
+    [data-theme="dark"] .main-header.header-solid .primary-navigation .nav-link.active {
+        color: var(--gold, #d4af37) !important;
+        font-weight: 700;
+    }
+
+    .primary-navigation .nav-link::after,
+    .main-header.scrolled .primary-navigation .nav-link.active::after,
+    .main-header.header-solid .primary-navigation .nav-link.active::after {
+        display: none !important;
     }
 
     .mobile-nav-cta {
@@ -3522,6 +3581,7 @@ section {
 
     body.nav-open {
         overflow: hidden;
+        touch-action: none;
     }
 
     .social-grid,

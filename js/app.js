@@ -66,6 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // Close menu when clicking on the logo link
+        const logoLink = document.querySelector('.logo-link');
+        if (logoLink) {
+            logoLink.addEventListener('click', () => {
+                if (primaryNav.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+        }
+
         // Close menu when pressing Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && primaryNav.classList.contains('active')) {
