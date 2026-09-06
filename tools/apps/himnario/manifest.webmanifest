@@ -1,0 +1,23 @@
+{
+  "name": "Celebremos Su Gloria - Himnario",
+  "short_name": "Himnario",
+  "description": "Himnario Celebremos Su Gloria con letras, audios, tonos, listas y favoritos",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#006680",
+  "theme_color": "#006680",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

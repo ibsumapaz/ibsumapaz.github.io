@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#006680" />
+      <stop offset="100%" stop-color="#14C69B" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#brandGrad)" />
+  <!-- Music note & Book mark -->
+  <path d="M40 88V44c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v44c0 2.2-1.8 4-4 4H44c-2.2 0-4-1.8-4-4z" fill="#ffffff" opacity="0.9" />
+  <path d="M52 36v34.5a10 10 0 1 0 6 9.2V48l24-6v22.5a10 10 0 1 0 6 9.2V32L52 36z" fill="#DCBB11" />
+</svg>
