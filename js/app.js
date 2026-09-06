@@ -13,13 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.mobile-nav-toggle');
     const primaryNav = document.getElementById('primary-navigation');
     const sections = document.querySelectorAll('section[id]');
+    const hasHero = document.querySelector('.hero-section');
 
-    // Fixed Header Scroll Class
+    // On inner pages without a hero (e.g., recursos.html, 404.html), ensure header is always solid
+    if (!hasHero && header) {
+        header.classList.add('scrolled', 'header-solid');
+    }
+
+    // Fixed Header Scroll Class (only toggle on pages with a hero)
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header?.classList.add('scrolled');
-        } else {
-            header?.classList.remove('scrolled');
+        if (hasHero && header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
         highlightActiveSection();
     });
@@ -584,10 +592,16 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================
        9. CONTACT FORM VALIDATION & TOASTS
        ========================================== */
-    const contactForm = document.getElementById('contact-form');
-    const toastContainer = document.getElementById('toast-container');
+    let toastContainer = document.getElementById('toast-container');
 
     function showToast(message, type = 'success') {
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.id = 'toast-container';
+            toastContainer.className = 'toast-container';
+            document.body.appendChild(toastContainer);
+        }
+
         const toast = document.createElement('div');
         toast.className = `toast ${type}`;
 

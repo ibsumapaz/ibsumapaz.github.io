@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZC9BFRY47"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PZC9BFRY47');
+    </script>
+
+    <!-- SEO Optimization Meta Tags -->
+    <title>Recursos Digitales | Iglesia Bautista Sumapaz</title>
+    <meta name="description"
+        content="Explora nuestras aplicaciones móviles, el Himnario Cristiano Celebremos Su Gloria en línea y divertidos juegos bíblicos como ¿Quién quiere ser Biblionario?">
+    <meta name="keywords"
+        content="Recursos cristianos, Himnario Celebremos Su Gloria, Quien quiere ser biblionario, Biblionario Pentateuco, App Iglesia Bautista Sumapaz, Plan de lectura biblica, Fusagasuga">
+    <meta name="author" content="Iglesia Bautista Sumapaz">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+    <meta property="og:title" content="Recursos Digitales | Iglesia Bautista Sumapaz">
+    <meta property="og:description"
+        content="Aplicaciones móviles, Himnario Celebremos Su Gloria y Juegos Bíblicos para tu edificación y aprendizaje.">
+    <meta property="og:image" content="assets/hero_bg.jpg">
+    <meta property="og:url" content="https://iglesiabautistasumapaz.org/recursos.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recursos Digitales | Iglesia Bautista Sumapaz">
+    <meta name="twitter:description"
+        content="Accede a aplicaciones, himnario digital y juegos bíblicos de la Iglesia Bautista Sumapaz.">
+    <meta name="twitter:image" content="assets/hero_bg.jpg">
+
+    <!-- Fonts (Outfit for Headers, Inter for Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+    <!-- Inline Script to apply dark theme immediately to avoid flash -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header header-solid scrolled">
+        <div class="nav-container">
+            <a href="index.html#inicio" class="logo-link">
+                <img src="assets/logo.svg" alt="Iglesia Bautista Sumapaz Logo" class="nav-logo" id="header-logo">
+                <span class="logo-text">Sumapaz</span>
+            </a>
+
+            <nav class="primary-navigation" id="primary-navigation" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#social-hub" class="nav-link">Social Media</a></li>
+                    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="index.html#ministerios" class="nav-link">Ministerios</a></li>
+                    <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="index.html#plan-biblico" class="nav-link">Plan Bíblico</a></li>
+                    <li><a href="recursos.html" class="nav-link active">Recursos</a></li>
+                    <li><a href="index.html#galeria" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="mobile-nav-cta">
+                    <a href="index.html#contacto" class="btn btn-primary btn-mobile-cta">Visítanos</a>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728A9 9 0 115.636 5.636m12.728 12.728L12 12" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <a href="index.html#contacto" class="btn btn-primary btn-nav">Visítanos</a>
+                <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"
+                    aria-label="Abrir menú de navegación">
+                    <span class="sr-only">Menú</span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="resources-page-hero">
+            <div class="container">
+                <span class="badge badge-plan">✨ Centro de Recursos Digitales</span>
+                <h1 class="section-title" style="font-size: clamp(32px, 5vw, 52px); margin-top: 12px;">Herramientas para tu Crecimiento Espiritual</h1>
+                <p class="section-desc" style="max-width: 720px; margin: 0 auto;">
+                    Explora nuestras aplicaciones móviles, el himnario interactivo y divertidos juegos bíblicos creados para edificar a la iglesia, estudiar las Escrituras y enriquecer la vida familiar.
+                </p>
+
+                <!-- Category Filters -->
+                <div class="resources-filter-container">
+                    <button class="resource-filter-btn active" data-filter="all">
+                        <span>🌟 Todos los Recursos</span>
+                    </button>
+                    <button class="resource-filter-btn" data-filter="apps">
+                        <span>📱 Aplicaciones Móviles</span>
+                    </button>
+                    <button class="resource-filter-btn" data-filter="himnario">
+                        <span>🎵 Himnario Digital</span>
+                    </button>
+                    <button class="resource-filter-btn" data-filter="juegos">
+                        <span>🎮 Juegos Bíblicos</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Mobile Apps -->
+        <section id="apps-category" class="resource-category-section" data-category="apps">
+            <div class="container">
+                <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                    <span class="category-badge-header badge-app">📱 Aplicaciones Móviles</span>
+                    <h2 class="section-title" style="text-align: left;">Apps Disponibles para tu Dispositivo</h2>
+                    <p class="section-desc" style="text-align: left; max-width: 700px;">
+                        Descarga directamente las aplicaciones oficiales para Android y mantén a la mano las herramientas de edificación de nuestra congregación.
+                    </p>
+                </div>
+
+                <div class="apps-stack-list">
+                    <!-- Church App Card -->
+                    <div class="app-card card-glass shadow-premium">
+                        <div class="app-card-body">
+                            <div class="app-info-column">
+                                <div class="app-card-header">
+                                    <div class="app-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 3L2 12h3v8h14v-8h3L12 3zm0 6a3 3 0 110 6 3 3 0 010-6z" />
+                                        </svg>
+                                    </div>
+                                    <div class="app-title-group">
+                                        <span class="badge badge-app">Iglesia</span>
+                                        <h3 class="app-title">App Iglesia Bautista Sumapaz</h3>
+                                    </div>
+                                </div>
+                                <p class="app-description">Nuestra aplicación móvil oficial te mantiene conectado con
+                                    toda la actividad de la iglesia. Accede a los últimos anuncios en tiempo real,
+                                    reproduce los sermones en audio del podcast en Spotify y busca himnos de forma
+                                    instantánea con el Himnario oficial digital "Celebremos Su Gloria" integrado.</p>
+
+                                <div class="app-features">
+                                    <span class="feature-tag"><span class="feature-dot"></span> Himnario Digital</span>
+                                    <span class="feature-tag"><span class="feature-dot"></span> Últimos Anuncios</span>
+                                    <span class="feature-tag"><span class="feature-dot"></span> Sermones en Audio</span>
+                                </div>
+
+                                <div class="app-download-actions">
+                                    <a href="assets/apks/app-ibsumapaz-release.apk" class="btn btn-primary btn-download"
+                                        download>
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+                                        </svg>
+                                        Descargar para Android (APK)
+                                    </a>
+                                    <span class="app-compatibility">Requiere Android 5.0 o superior • Instalación directa</span>
+                                </div>
+                            </div>
+                            <div class="app-screenshot-column">
+                                <div class="phone-mockup">
+                                    <div class="phone-screen"
+                                        style="background-image: url('assets/app_screenshot_iglesia.jpg');"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reading Plan App Card -->
+                    <div class="app-card card-glass shadow-premium">
+                        <div class="app-card-body">
+                            <div class="app-info-column">
+                                <div class="app-card-header">
+                                    <div class="app-icon-wrapper reading-plan-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                        </svg>
+                                    </div>
+                                    <div class="app-title-group">
+                                        <span class="badge badge-app-plan">Plan de Lectura</span>
+                                        <h3 class="app-title">App "Me Alegro en Tu Palabra"</h3>
+                                    </div>
+                                </div>
+                                <p class="app-description">Lleva tu plan diario de lectura de la Biblia a todas partes.
+                                    Marca las porciones leídas cada día para llevar un control de tu progreso mensual y
+                                    accede de forma rápida al texto bíblico y reflexiones correspondientes de cada día
+                                    desde un entorno enfocado y libre de distracciones.</p>
+
+                                <div class="app-features">
+                                    <span class="feature-tag"><span class="feature-dot"></span> Seguimiento Diario</span>
+                                    <span class="feature-tag"><span class="feature-dot"></span> Progreso Mensual</span>
+                                    <span class="feature-tag"><span class="feature-dot"></span> Sin Publicidad</span>
+                                </div>
+
+                                <div class="app-download-actions">
+                                    <a href="assets/apks/plan-lectura-release.apk" class="btn btn-primary btn-download"
+                                        download>
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+                                        </svg>
+                                        Descargar para Android (APK)
+                                    </a>
+                                    <a href="https://youtube.com/shorts/JXOZL3YsGV0?si=9oM7huWuBEZTTfnN" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-outline btn-download btn-tutorial">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M21 3H3c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm-9 12V9l5 3-5 3z" />
+                                        </svg>
+                                        Ver Tutorial de Instalación
+                                    </a>
+                                    <span class="app-compatibility">Requiere Android 5.0 o superior • Instalación directa</span>
+                                </div>
+                            </div>
+                            <div class="app-screenshot-column">
+                                <div class="phone-mockup">
+                                    <div class="phone-screen"
+                                        style="background-image: url('assets/app_screenshot_plan.jpg');"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Himnario App Card -->
+                    <div class="app-card card-glass shadow-premium">
+                        <div class="app-card-body">
+                            <div class="app-info-column">
+                                <div class="app-card-header">
+                                    <div class="app-icon-wrapper reading-plan-icon" style="background-color: hsla(166, 82%, 43%, 0.15); color: var(--accent);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 18V5l12-2v13"></path>
+                                             <circle cx="6" cy="18" r="3"></circle>
+                                            <circle cx="18" cy="16" r="3"></circle>
+                                        </svg>
+                                    </div>
+                                    <div class="app-title-group">
+                                        <span class="badge badge-app" style="background-color: hsla(166, 82%, 43%, 0.15); color: var(--accent);">Alabanza</span>
+                                        <h3 class="app-title">App Himnario "Celebremos Su Gloria"</h3>
+                                    </div>
+                                </div>
+                                <p class="app-description">Lleva más de 600 himnos tradicionales en tu celular Android sin necesidad de conexión a internet. Más de 600 himnos con letras completas, coros, tonos, partituras, listas de favoritos y reproductor de audio integrado.</p>
+
+                                <div class="app-features">
+                                    <span class="feature-tag"><span class="feature-dot"></span> +600 Himnos</span>
+                                    <span class="feature-tag"><span class="feature-dot"></span> Audios por Tono</span>
+                                    <span class="feature-tag"><span class="feature-dot"></span> 100% Offline</span>
+                                </div>
+
+                                <div class="app-download-actions">
+                                    <a href="assets/apks/app-himnario-release.apk" class="btn btn-primary btn-download"
+                                        download>
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+                                        </svg>
+                                        Descargar para Android (APK)
+                                    </a>
+                                    <a href="tools/apps/himnario/" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-outline btn-download">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Abrir Versión Web (PWA)
+                                    </a>
+                                    <span class="app-compatibility">Requiere Android 5.0 o superior • Instalación directa</span>
+                                </div>
+                            </div>
+                            <div class="app-screenshot-column">
+                                <div class="phone-mockup">
+                                    <div class="phone-screen"
+                                        style="background-image: url('assets/app_screenshot_himnario.jpg');"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Himnario Digital -->
+        <section id="himnario-category" class="resource-category-section" data-category="himnario">
+            <div class="container">
+                <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                    <span class="category-badge-header badge-plan">🎵 Himnario Digital</span>
+                    <h2 class="section-title" style="text-align: left;">Himnario Celebremos Su Gloria</h2>
+                    <p class="section-desc" style="text-align: left; max-width: 700px;">
+                        Accede a los más de 600 himnos tradicionales con letras, partituras y tonos en audio directamente desde la App para Android o desde tu navegador web como Progressive Web App (PWA).
+                    </p>
+                </div>
+
+                <div class="himnario-hero-card shadow-premium">
+                    <div class="himnario-hero-content">
+                        <div class="card-top" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                            <span class="badge badge-app-plan">Android & PWA Web</span>
+                            <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">Multiplataforma</span>
+                        </div>
+                        <h3 style="font-size: 28px; margin-bottom: 16px; color: var(--text-color);">Himnario Cristiano Interactivo</h3>
+                        <p style="font-size: 16px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+                            Diseñado tanto para la congregación como para líderes de alabanza y músicos. Incluye buscador rápido por título o número, audios en formato MP3 con diferentes tonos musicales, letras formateadas, coros destacados y la opción de guardar tus himnos favoritos o listas de alabanza para los cultos.
+                        </p>
+
+                        <div class="app-features" style="margin-bottom: 32px;">
+                            <span class="feature-tag"><span class="feature-dot"></span> +600 Himnos Completos</span>
+                            <span class="feature-tag"><span class="feature-dot"></span> Audios por Tono</span>
+                            <span class="feature-tag"><span class="feature-dot"></span> App Android (APK)</span>
+                            <span class="feature-tag"><span class="feature-dot"></span> Listas y Favoritos</span>
+                            <span class="feature-tag"><span class="feature-dot"></span> PWA Instalable</span>
+                        </div>
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+                            <a href="assets/apks/app-himnario-release.apk" class="btn btn-primary" download style="padding: 14px 28px; gap: 8px;">
+                                <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+                                </svg>
+                                Descargar App para Android (APK)
+                            </a>
+                            <a href="tools/apps/himnario/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 14px 28px; gap: 8px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Abrir Himnario Online (PWA)
+                            </a>
+                        </div>
+
+                        <div class="pwa-instruction-box">
+                            <span class="pwa-instruction-icon">💡</span>
+                            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">
+                                <strong style="color: var(--text-color); display: block; margin-bottom: 2px;">¿Cómo instalarlo en tu teléfono o PC?</strong>
+                                Al abrir el himnario en Google Chrome o Safari, selecciona el menú de opciones de tu navegador y presiona <em>"Agregar a la pantalla principal"</em> o <em>"Instalar aplicación"</em> para usarlo como una app nativa.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="himnario-preview-box">
+                        <img src="assets/himnario.jpg" alt="Himnario Celebremos Su Gloria" class="himnario-preview-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Bible Games (Juegos Bíblicos) -->
+        <section id="juegos-category" class="resource-category-section" data-category="juegos">
+            <div class="container">
+                <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                    <span class="category-badge-header badge-app" style="background-color: var(--gold-glow); color: var(--gold);">🎮 Juegos Bíblicos</span>
+                    <h2 class="section-title" style="text-align: left;">Zona Lúdica y Aprendizaje Bíblico</h2>
+                    <p class="section-desc" style="text-align: left; max-width: 700px;">
+                        Aprende la Palabra de Dios mientras te diviertes con nuestros juegos interactivos ideales para jóvenes, reuniones familiares y la escuela dominical.
+                    </p>
+                </div>
+
+                <!-- Biblionario Spotlight -->
+                <div class="biblionario-header-box">
+                    <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <span style="font-size: 32px;">🏆</span>
+                        <h3 style="font-size: 28px; color: var(--text-color); font-family: var(--font-heading); margin: 0;">¿Quién quiere ser Biblionario?</h3>
+                    </div>
+                    <p style="color: var(--text-muted); max-width: 760px; margin: 0 auto; font-size: 16px; line-height: 1.6;">
+                        El popular juego de preguntas y respuestas inspirado en el famoso concurso televisivo, adaptado con temáticas y desafíos de las Sagradas Escrituras. ¡Avanza por 15 niveles de dificultad, usa tus comodines bíblicos y llega a la meta!
+                    </p>
+                </div>
+
+                <!-- Editions Grid -->
+                <div class="game-editions-grid">
+                    <!-- Edition 1: Pentateuco (Active) -->
+                    <div class="game-edition-card active-edition">
+                        <span class="edition-status-badge status-available">✅ Disponible</span>
+                        <div class="resource-portal-icon gold-icon" style="margin-bottom: 16px;">
+                            📜
+                        </div>
+                        <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--text-color);">Edición Pentateuco</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                            Pon a prueba tus conocimientos sobre la Creación, los Patriarcas, la salida de Egipto, la Ley Mosaica y el Tabernáculo.
+                        </p>
+                        <div class="edition-books-list">
+                            <span class="edition-book-tag">Génesis</span>
+                            <span class="edition-book-tag">Éxodo</span>
+                            <span class="edition-book-tag">Levítico</span>
+                            <span class="edition-book-tag">Números</span>
+                            <span class="edition-book-tag">Deuteronomio</span>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <a href="tools/juegos/biblionario/pentateuco/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center; gap: 8px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                Jugar Edición Pentateuco
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Edition 2: Libros Históricos (Coming Soon) -->
+                    <div class="game-edition-card coming-soon-edition">
+                        <span class="edition-status-badge status-coming">⏳ Próximamente</span>
+                        <div class="resource-portal-icon" style="margin-bottom: 16px;">
+                            ⚔️
+                        </div>
+                        <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--text-color);">Edición Libros Históricos</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                            La conquista de Canaán, el tiempo de los jueces, la monarquía de Israel y Judá, el exilio babilónico y el retorno a Jerusalén.
+                        </p>
+                        <div class="edition-books-list">
+                            <span class="edition-book-tag">Josué</span>
+                            <span class="edition-book-tag">Jueces</span>
+                            <span class="edition-book-tag">Rut</span>
+                            <span class="edition-book-tag">Samuel</span>
+                            <span class="edition-book-tag">Reyes</span>
+                            <span class="edition-book-tag">Crónicas</span>
+                            <span class="edition-book-tag">Esdras</span>
+                            <span class="edition-book-tag">Nehemías</span>
+                            <span class="edition-book-tag">Ester</span>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <button class="btn btn-outline" disabled style="width: 100%; justify-content: center; opacity: 0.6; cursor: not-allowed;">
+                                En Desarrollo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Edition 3: Libros Poéticos (Coming Soon) -->
+                    <div class="game-edition-card coming-soon-edition">
+                        <span class="edition-status-badge status-coming">⏳ Próximamente</span>
+                        <div class="resource-portal-icon mint-icon" style="margin-bottom: 16px;">
+                            🕊️
+                        </div>
+                        <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--text-color);">Edición Poéticos y Sabiduría</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                            Preguntas sobre la fidelidad de Job, las alabanzas en los Salmos, la sabiduría de Proverbios, Eclesiastés y Cantares.
+                        </p>
+                        <div class="edition-books-list">
+                            <span class="edition-book-tag">Job</span>
+                            <span class="edition-book-tag">Salmos</span>
+                            <span class="edition-book-tag">Proverbios</span>
+                            <span class="edition-book-tag">Eclesiastés</span>
+                            <span class="edition-book-tag">Cantares</span>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <button class="btn btn-outline" disabled style="width: 100%; justify-content: center; opacity: 0.6; cursor: not-allowed;">
+                                En Desarrollo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Edition 4: Profetas (Coming Soon) -->
+                    <div class="game-edition-card coming-soon-edition">
+                        <span class="edition-status-badge status-coming">⏳ Próximamente</span>
+                        <div class="resource-portal-icon" style="margin-bottom: 16px;">
+                            🔥
+                        </div>
+                        <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--text-color);">Edición Profetas</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                            Profecías mesiánicas, visiones del reino de Dios, llamados al arrepentimiento y el mensaje de los 16 profetas bíblicos.
+                        </p>
+                        <div class="edition-books-list">
+                            <span class="edition-book-tag">Isaías</span>
+                            <span class="edition-book-tag">Jeremías</span>
+                            <span class="edition-book-tag">Ezequiel</span>
+                            <span class="edition-book-tag">Daniel</span>
+                            <span class="edition-book-tag">12 Menores</span>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <button class="btn btn-outline" disabled style="width: 100%; justify-content: center; opacity: 0.6; cursor: not-allowed;">
+                                En Desarrollo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Edition 5: Evangelios y Hechos (Coming Soon) -->
+                    <div class="game-edition-card coming-soon-edition">
+                        <span class="edition-status-badge status-coming">⏳ Próximamente</span>
+                        <div class="resource-portal-icon gold-icon" style="margin-bottom: 16px;">
+                            ✨
+                        </div>
+                        <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--text-color);">Edición Evangelios y Hechos</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                            La vida, parábolas, milagros, muerte y resurrección de nuestro Señor Jesucristo, y el nacimiento de la iglesia en Hechos.
+                        </p>
+                        <div class="edition-books-list">
+                            <span class="edition-book-tag">Mateo</span>
+                            <span class="edition-book-tag">Marcos</span>
+                            <span class="edition-book-tag">Lucas</span>
+                            <span class="edition-book-tag">Juan</span>
+                            <span class="edition-book-tag">Hechos</span>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <button class="btn btn-outline" disabled style="width: 100%; justify-content: center; opacity: 0.6; cursor: not-allowed;">
+                                En Desarrollo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Edition 6: Epístolas y Apocalipsis (Coming Soon) -->
+                    <div class="game-edition-card coming-soon-edition">
+                        <span class="edition-status-badge status-coming">⏳ Próximamente</span>
+                        <div class="resource-portal-icon mint-icon" style="margin-bottom: 16px;">
+                            👑
+                        </div>
+                        <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--text-color);">Edición Epístolas y Apocalipsis</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                            Cartas doctrinales paulinas y generales, la vida de fe cristiana en comunidad y la esperanza del regreso triunfal de Cristo.
+                        </p>
+                        <div class="edition-books-list">
+                            <span class="edition-book-tag">Romanos a Judas</span>
+                            <span class="edition-book-tag">Apocalipsis</span>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <button class="btn btn-outline" disabled style="width: 100%; justify-content: center; opacity: 0.6; cursor: not-allowed;">
+                                En Desarrollo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html#inicio" class="logo-link footer-logo">
+                    <img src="assets/logo.svg" alt="Iglesia Bautista Sumapaz Logo" class="nav-logo">
+                    <span class="logo-text">Sumapaz</span>
+                </a>
+                <p class="footer-desc">Una iglesia comprometida con predicar el evangelio bíblico y enseñar la Palabra
+                    de Dios con fidelidad en Fusagasugá, Colombia.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/iglesiabautistasumapaz" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@IglesiaBautistaSumapaz" target="_blank"
+                        rel="noopener noreferrer" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                    <a href="https://open.spotify.com/show/2WONi2DdFl5oHKLg0FNgMj" target="_blank"
+                        rel="noopener noreferrer" aria-label="Spotify">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.31c-.22.355-.68.468-1.035.248-2.836-1.733-6.406-2.126-10.61-1.165-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.605-1.053 8.563-.604 11.732 1.343.355.22.468.68.248 1.035zm1.468-3.26c-.276.446-.86.588-1.306.313-3.245-1.995-8.192-2.572-12.03-1.407-.5.152-1.03-.133-1.182-.633-.152-.5.133-1.03.633-1.182 4.387-1.332 9.855-.688 13.572 1.603.446.276.588.86.313 1.306zm.127-3.39c-3.89-2.31-10.31-2.524-14.032-1.394-.596.18-1.228-.155-1.408-.752-.18-.596.155-1.228.752-1.408 4.282-1.3 11.365-1.054 15.823 1.594.536.318.71 1.01.392 1.546-.318.536-1.01.71-1.527.414z" />
+                        </svg>
+                    </a>
+                    <a href="https://linktr.ee/sumapaz" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <g transform="translate(2.4, 2.4) scale(0.8)">
+                                <path
+                                    d="m13.73635 5.85251 4.00467-4.11665 2.3248 2.3808-4.20064 4.00466h5.9085v3.30473h-5.9365l4.22865 4.10766-2.3248 2.3338L12.0005 12.099l-5.74052 5.76852-2.3248-2.3248 4.22864-4.10766h-5.9375V8.12132h5.9085L3.93417 4.11666l2.3248-2.3808 4.00468 4.11665V0h3.4727zm-3.4727 10.30614h3.4727V24h-3.4727z" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Nuestra Iglesia</h3>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="index.html#ministerios">Ministerios</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#galeria">Galería de Fotos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="https://open.spotify.com/show/2WONi2DdFl5oHKLg0FNgMj" target="_blank"
+                            rel="noopener noreferrer">Escuchar Sermones</a></li>
+                    <li><a href="https://mealegroentupalabra.wordpress.com/la-biblia-en-un-ano/" target="_blank"
+                            rel="noopener noreferrer">Plan de Lectura Anual</a></li>
+                    <li><a href="https://mealegroentupalabra.wordpress.com/" target="_blank"
+                            rel="noopener noreferrer">Blog "Me Alegro en Tu Palabra"</a></li>
+                    <li><a href="recursos.html">Centro de Recursos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2010 - 2026 Iglesia Bautista Sumapaz. Todos los derechos reservados.</p>
+                <p>Fusagasugá, Colombia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App JavaScript -->
+    <script src="js/app.js"></script>
+
+    <!-- Script for category filtering in recursos.html -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.resource-filter-btn');
+            const sections = document.querySelectorAll('.resource-category-section');
+
+            function applyFilter(filter) {
+                filterButtons.forEach(b => {
+                    if (b.getAttribute('data-filter') === filter) {
+                        b.classList.add('active');
+                    } else {
+                        b.classList.remove('active');
+                    }
+                });
+
+                sections.forEach(sec => {
+                    const category = sec.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        sec.classList.remove('hidden');
+                    } else {
+                        sec.classList.add('hidden');
+                    }
+                });
+            }
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.getAttribute('data-filter');
+                    applyFilter(filter);
+                });
+            });
+
+            // Handle direct hash navigation (e.g. recursos.html#apps-category or recursos.html#himnario)
+            const hash = window.location.hash.replace('#', '').replace('-category', '');
+            if (hash && ['apps', 'himnario', 'juegos'].includes(hash)) {
+                applyFilter(hash);
+            }
+        });
+    </script>
+</body>
+
+</html>
