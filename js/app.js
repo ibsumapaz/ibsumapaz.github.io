@@ -428,9 +428,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function closeMinistryModal() {
-        ministryModal.classList.remove('active');
-        ministryModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        if (ministryModal) {
+            ministryModal.classList.remove('active');
+            ministryModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
     }
 
     if (modalClose) {
@@ -558,9 +560,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function closeLightbox() {
-        lightbox.classList.remove('active');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        if (lightbox) {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
     }
 
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
@@ -593,6 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
        9. CONTACT FORM VALIDATION & TOASTS
        ========================================== */
     let toastContainer = document.getElementById('toast-container');
+    const contactForm = document.getElementById('contact-form');
 
     function showToast(message, type = 'success') {
         if (!toastContainer) {
