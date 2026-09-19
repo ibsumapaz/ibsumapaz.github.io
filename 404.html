@@ -15,9 +15,9 @@
     </script>
 
     <!-- SEO Optimization Meta Tags -->
-    <title>Página No Encontrada | Iglesia Bautista Sumapaz</title>
+    <title>Página No Encontrada (404) | Iglesia Bautista Sumapaz</title>
     <meta name="description"
-        content="Error 404. La página que busca no existe en el sitio de la Iglesia Bautista Sumapaz.">
+        content="La página que estás buscando no existe o ha sido movida. Explora los recursos y enlaces de la Iglesia Bautista Sumapaz.">
     <meta name="robots" content="noindex, follow">
 
     <!-- Fonts (Outfit for Headers, Inter for Body) -->
@@ -28,10 +28,10 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
     <!-- Inline Script to apply dark theme immediately to avoid flash -->
     <script>
@@ -45,94 +45,30 @@
             }
         })();
     </script>
-
-    <style>
-        /* Custom styles for the 404 layout */
-        .error-404-section {
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: calc(100vh - 80px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 120px;
-            padding-bottom: 80px;
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .error-code {
-            font-family: var(--font-heading);
-            font-size: clamp(80px, 15vw, 160px);
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-        }
-
-        .main-header {
-            background: var(--surface-glass);
-            backdrop-filter: blur(16px);
-            box-shadow: var(--shadow-sm);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .main-header .logo-text {
-            color: var(--primary);
-        }
-
-        [data-theme="dark"] .main-header .logo-text {
-            color: #ffffff;
-        }
-
-        .main-header .nav-link {
-            color: var(--text-color);
-        }
-
-        .main-header .nav-link:hover {
-            color: var(--accent);
-        }
-
-        .main-header .theme-toggle {
-            color: var(--text-color);
-            background-color: rgba(0, 0, 0, 0.04);
-        }
-
-        [data-theme="dark"] .main-header .theme-toggle {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-    </style>
 </head>
 
 <body>
 
     <!-- Header Navigation -->
-    <header class="main-header header-solid scrolled">
+    <header class="main-header header-solid scrolled" id="main-header">
         <div class="nav-container">
-            <a href="/index.html#inicio" class="logo-link">
-                <img src="/assets/logo.svg" alt="Iglesia Bautista Sumapaz Logo" class="nav-logo" id="header-logo">
-                <span class="logo-text">Sumapaz</span>
+            <a href="index.html#inicio" class="logo-link">
+                <img src="assets/logo.svg" alt="Iglesia Bautista Sumapaz Logo" class="nav-logo" id="header-logo">
+                <div class="logo-text-group">
+                    <span class="logo-text-main">Sumapaz</span>
+                    <span class="logo-text-sub">Iglesia Bautista</span>
+                </div>
             </a>
 
             <nav class="primary-navigation" id="primary-navigation" aria-label="Navegación principal">
-                <ul class="nav-list">
-                    <li><a href="/index.html#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="/index.html#social-hub" class="nav-link">Social Media</a></li>
-                    <li><a href="/index.html#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="/index.html#ministerios" class="nav-link">Ministerios</a></li>
-                    <li><a href="/index.html#servicios" class="nav-link">Servicios</a></li>
-                    <li><a href="/index.html#plan-biblico" class="nav-link">Plan Bíblico</a></li>
-                    <li><a href="/recursos.html" class="nav-link">Recursos</a></li>
-                    <li><a href="/index.html#galeria" class="nav-link">Galería</a></li>
-                    <li><a href="/index.html#contacto" class="nav-link">Contacto</a></li>
+                <ul class="nav-pill-wrapper">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="index.html#reuniones">Reuniones</a></li>
+                    <li><a href="index.html#crecimiento">Crecimiento Espiritual</a></li>
+                    <li><a href="index.html#comunidad">Comunidad</a></li>
+                    <li><a href="recursos.html">Recursos</a></li>
                 </ul>
-                <div class="mobile-nav-cta">
-                    <a href="/index.html#contacto" class="btn btn-primary btn-mobile-cta">Visítanos</a>
-                </div>
             </nav>
 
             <div class="header-actions">
@@ -148,10 +84,10 @@
                             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
                 </button>
-                <a href="/index.html#contacto" class="btn btn-primary btn-nav">Visítanos</a>
-                <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú de navegación">
-                    <span class="sr-only">Menú</span>
-                    <span class="hamburger-bar"></span>
+                <a href="index.html#reuniones" class="btn btn-primary btn-sm">Visítanos</a>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-controls="primary-navigation"
+                    aria-expanded="false" aria-label="Abrir menú">
+                    <div class="hamburger-icon"></div>
                 </button>
             </div>
         </div>
@@ -159,25 +95,63 @@
 
     <!-- Main Content Area -->
     <main>
-        <!-- 404 Hero Section -->
-        <section class="error-404-section"
-            style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85)), url('/assets/hero_bg.jpg');">
-            <div class="hero-content container">
-                <div class="error-code">404</div>
-                <div class="hero-badge"
-                    style="border-color: rgba(20, 198, 155, 0.3); background-color: rgba(0, 102, 128, 0.4);">
-                    Página No Encontrada
-                </div>
-                <h1 class="hero-title" style="font-size: clamp(24px, 4vw, 42px); margin-bottom: 16px;">
-                    Lo sentimos, este camino no existe
-                </h1>
-                <p class="hero-description" style="margin-bottom: 32px; font-size: 17px;">
-                    La página que estás buscando puede haber sido eliminada, cambiado de nombre o no estar disponible
-                    temporalmente.
-                </p>
-                <div class="hero-buttons">
-                    <a href="/index.html" class="btn btn-primary btn-lg">Volver al Inicio</a>
-                    <a href="/index.html#contacto" class="btn btn-secondary btn-lg">Contactar Soporte</a>
+        <section class="error-page-section">
+            <div class="container">
+                <div class="error-card-container card-glass shadow-premium">
+                    <div class="section-pill-badge" style="margin-bottom: 0;">✦ Error 404</div>
+                    <div class="error-number-glitch">404</div>
+
+                    <h1 class="error-title">Página No Encontrada</h1>
+
+                    <p class="error-description">
+                        Lo sentimos, la dirección a la que intentas acceder no existe, ha sido movida o no está
+                        disponible temporalmente.
+                    </p>
+
+                    <div class="error-actions-group">
+                        <a href="index.html" class="btn btn-primary btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                            Volver al Inicio
+                        </a>
+
+                        <a href="recursos.html" class="btn btn-secondary btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                <polyline points="2 17 12 22 22 17" />
+                                <polyline points="2 12 12 17 22 12" />
+                            </svg>
+                            Centro de Recursos
+                        </a>
+
+                        <a href="index.html#contacto" class="btn btn-outline btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            Contacto
+                        </a>
+                    </div>
+
+                    <div class="error-suggestions-box">
+                        <div class="error-suggestions-title">Secciones recomendadas:</div>
+                        <div class="error-pills-row">
+                            <a href="recursos.html#himnario" class="error-nav-pill">🎵 Himnario en Línea</a>
+                            <a href="recursos.html#plan" class="error-nav-pill">📖 Plan Bíblico Anual</a>
+                            <a href="index.html#reuniones" class="error-nav-pill">📍 Horarios y Dirección</a>
+                            <a href="recursos.html#juegos" class="error-nav-pill">🎮 ¿Quién quiere ser Biblionario?</a>
+                            <a href="https://open.spotify.com/show/2WONi2DdFl5oHKLg0FNgMj" target="_blank"
+                                rel="noopener noreferrer" class="error-nav-pill">🎧 Sermones en Spotify</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -187,38 +161,49 @@
     <footer class="main-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="/index.html#inicio" class="logo-link">
-                    <img src="/assets/logo.svg" alt="Iglesia Bautista Sumapaz" class="footer-logo">
-                    <span class="logo-text">Iglesia Bautista Sumapaz</span>
+                <a href="index.html#inicio" class="logo-link footer-logo">
+                    <img src="assets/logo.svg" alt="Iglesia Bautista Sumapaz Logo" class="nav-logo">
+                    <div class="logo-text-group">
+                        <span class="logo-text-main" style="color: #ffffff;">Sumapaz</span>
+                        <span class="logo-text-sub">Iglesia Bautista</span>
+                    </div>
                 </a>
-                <p class="footer-tagline">Predicando la Palabra de Dios con claridad y fidelidad. Una comunidad bautista
-                    bíblica en el corazón de Colombia.</p>
+                <p class="footer-tagline">
+                    Una iglesia comprometida con predicar el evangelio bíblico y enseñar la Palabra de Dios con
+                    fidelidad en Fusagasugá, Colombia.
+                </p>
                 <div class="footer-social-links">
                     <a href="https://www.facebook.com/iglesiabautistasumapaz" target="_blank" rel="noopener noreferrer"
-                        aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        class="footer-social-btn" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                             <path
                                 d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
                         </svg>
                     </a>
                     <a href="https://www.youtube.com/@IglesiaBautistaSumapaz" target="_blank" rel="noopener noreferrer"
-                        aria-label="YouTube">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <g transform="translate(2.4, 2.4) scale(0.8)">
-                                <path
-                                    d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </g>
+                        class="footer-social-btn" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path
+                                d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                         </svg>
                     </a>
                     <a href="https://open.spotify.com/show/2WONi2DdFl5oHKLg0FNgMj" target="_blank"
-                        rel="noopener noreferrer" aria-label="Spotify">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        rel="noopener noreferrer" class="footer-social-btn" aria-label="Spotify">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                             <path
                                 d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.893-.982-.336.075-.67-.136-.746-.472-.075-.337.136-.67.472-.746 3.852-.878 7.144-.504 9.822 1.134.295.18.387.565.207.86zm1.225-2.72c-.227.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.073-1.185-.413.125-.847-.107-.972-.52-.125-.413.107-.847.52-.972 3.657-1.11 8.224-.567 11.34 1.348.366.226.486.706.26 1.073zm.106-2.833C14.484 8.78 8.74 8.59 5.405 9.602c-.512.155-1.046-.135-1.202-.647-.156-.512.135-1.047.647-1.202 3.82-1.16 10.158-.942 14.15 1.43.46.273.61.87.337 1.33-.273.46-.87.61-1.33.337z" />
                         </svg>
                     </a>
-                    <a href="https://linktr.ee/sumapaz" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <a href="https://wa.me/573209056394" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-btn" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path
+                                d="M12.031 2C6.49 2 2 6.48 2 12.01c0 1.77.46 3.48 1.33 4.99L2 22l5.13-1.34c1.45.79 3.09 1.21 4.76 1.21 5.54 0 10.03-4.48 10.03-10.01 0-2.67-1.04-5.18-2.93-7.07C17.09 2.94 14.59 2 12.03 2zm5.79 14.21c-.24.68-1.19 1.23-1.63 1.27-.45.04-.89.22-2.89-.57-2.56-1.01-4.21-3.62-4.34-3.8-.13-.17-1.09-1.45-1.09-2.76 0-1.31.68-1.96.93-2.22.25-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.39-.06.61.47.23.55.77 1.88.84 2 .07.13.12.28.03.45-.09.18-.13.28-.27.43-.14.15-.3.34-.43.46-.15.15-.3.31-.13.61.17.3.75 1.23 1.62 2.01.88.78 1.62 1.02 1.85 1.15.23.13.36.11.5-.05.14-.15.61-.71.77-.95.16-.24.33-.2.55-.12.23.08 1.45.68 1.7.81.25.13.41.19.47.3.06.11.06.64-.18 1.32z" />
+                        </svg>
+                    </a>
+                    <a href="https://linktr.ee/sumapaz" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-btn" aria-label="Linktree">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                             <g transform="translate(2.4, 2.4) scale(0.8)">
                                 <path
                                     d="m13.73635 5.85251 4.00467-4.11665 2.3248 2.3808-4.20064 4.00466h5.9085v3.30473h-5.9365l4.22865 4.10766-2.3248 2.3338L12.0005 12.099l-5.74052 5.76852-2.3248-2.3248 4.22864-4.10766h-5.9375V8.12132h5.9085L3.93417 4.11666l2.3248-2.3808 4.00468 4.11665V0h3.4727zm-3.4727 10.30614h3.4727V24h-3.4727z" />
@@ -228,36 +213,38 @@
                 </div>
             </div>
 
-            <div class="footer-links">
-                <h3>Nuestra Iglesia</h3>
+            <div class="footer-col">
+                <h4>Navegación</h4>
                 <ul>
-                    <li><a href="/index.html#inicio">Inicio</a></li>
-                    <li><a href="/index.html#nosotros">Sobre Nosotros</a></li>
-                    <li><a href="/index.html#ministerios">Ministerios</a></li>
-                    <li><a href="/index.html#servicios">Servicios</a></li>
-                    <li><a href="/index.html#galeria">Galería de Fotos</a></li>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="declaracion-de-fe.html">Declaración de Fe</a></li>
+                    <li><a href="index.html#reuniones">Horarios de Reuniones</a></li>
+                    <li><a href="index.html#crecimiento">Crecimiento Espiritual</a></li>
+                    <li><a href="index.html#comunidad">Comunidad</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
                 </ul>
             </div>
 
-            <div class="footer-links">
-                <h3>Recursos</h3>
+            <div class="footer-col">
+                <h4>Recursos Digitales</h4>
                 <ul>
+                    <li><a href="recursos.html">Centro de Recursos</a></li>
+                    <li><a href="recursos.html#app-iglesia">App Oficial Sumapaz</a></li>
+                    <li><a href="recursos.html#himnario">Himnario en Línea</a></li>
+                    <li><a href="recursos.html#plan">Plan Bíblico Anual</a></li>
+                    <li><a href="recursos.html#juegos">Juegos Bíblicos</a></li>
                     <li><a href="https://open.spotify.com/show/2WONi2DdFl5oHKLg0FNgMj" target="_blank"
-                            rel="noopener noreferrer">Escuchar Sermones</a></li>
-                    <li><a href="https://mealegroentupalabra.wordpress.com/la-biblia-en-un-ano/" target="_blank"
-                            rel="noopener noreferrer">Plan de Lectura Anual</a></li>
-                    <li><a href="https://mealegroentupalabra.wordpress.com/" target="_blank"
-                            rel="noopener noreferrer">Blog "Me Alegro en Tu Palabra"</a></li>
-                    <li><a href="/recursos.html">Centro de Recursos</a></li>
+                            rel="noopener noreferrer">Podcast en Spotify</a></li>
+                    <li><a href="https://www.youtube.com/@IglesiaBautistaSumapaz" target="_blank"
+                            rel="noopener noreferrer">Canal de YouTube</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="container footer-bottom-flex">
-                <p>&copy; 2010 - 2026 Iglesia Bautista Sumapaz. Todos los derechos reservados.</p>
-                <p>Fusagasugá, Colombia.</p>
-            </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2010 - 2026 Iglesia Bautista Sumapaz. Todos los derechos reservados.</p>
+            <p>Fusagasugá, Cundinamarca, Colombia.</p>
         </div>
     </footer>
 
@@ -265,7 +252,7 @@
     <div class="toast-container" id="toast-container"></div>
 
     <!-- App JavaScript -->
-    <script src="/js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

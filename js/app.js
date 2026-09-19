@@ -1,7 +1,8 @@
 /**
- * IGLESIA BAUTISTA SUMAPAZ - APP LOGIC
- * Dynamic interactive features: Scroll effects, Dark mode, Mock Audio Player,
- * Bible Reading Plan, Ministries Modal, Gallery Filter & Lightbox, Form Validator.
+ * IGLESIA BAUTISTA SUMAPAZ - MODERN APP LOGIC
+ * Dynamic interactive features: Theme Toggle, Dynamic Spotify/YouTube loaders,
+ * Bible Reading Plan daily widget, Declaración de Fe Modal, Curated Moments Lightbox,
+ * Navigation Scrollspy, and Web3Forms Validator.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,20 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
        1. NAVIGATION & SCROLL EFFECTS
        ========================================== */
     const header = document.querySelector('.main-header');
-    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navToggle = document.getElementById('mobile-nav-toggle');
     const primaryNav = document.getElementById('primary-navigation');
+    const navLinks = document.querySelectorAll('.nav-pill-wrapper a');
     const sections = document.querySelectorAll('section[id]');
     const hasHero = document.querySelector('.hero-section');
 
-    // On inner pages without a hero (e.g., recursos.html, 404.html), ensure header is always solid
+    // Solid header on inner pages without hero
     if (!hasHero && header) {
         header.classList.add('scrolled', 'header-solid');
     }
 
-    // Fixed Header Scroll Class (only toggle on pages with a hero)
+    // Scroll Header Style & Scrollspy
     window.addEventListener('scroll', () => {
         if (hasHero && header) {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 40) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -32,65 +34,47 @@ document.addEventListener('DOMContentLoaded', () => {
         highlightActiveSection();
     });
 
-    // Helper functions to open and close mobile drawer
+    // Mobile Navigation Drawer Toggle
     const openMobileMenu = () => {
         if (!navToggle || !primaryNav) return;
         navToggle.setAttribute('aria-expanded', 'true');
         primaryNav.classList.add('active');
-        document.body.classList.add('nav-open');
+        document.body.style.overflow = 'hidden';
     };
 
     const closeMobileMenu = () => {
         if (!navToggle || !primaryNav) return;
         navToggle.setAttribute('aria-expanded', 'false');
         primaryNav.classList.remove('active');
-        document.body.classList.remove('nav-open');
+        document.body.style.overflow = '';
     };
 
-    // Mobile Hamburger Toggle
     if (navToggle && primaryNav) {
         navToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isOpened = navToggle.getAttribute('aria-expanded') === 'true';
-            if (isOpened) {
+            const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
                 closeMobileMenu();
             } else {
                 openMobileMenu();
             }
         });
 
-        // Close menu when clicking on any link inside the navigation drawer
+        // Close on navigation link click
         primaryNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 closeMobileMenu();
             });
         });
 
-        // Close menu when clicking on the logo link
-        const logoLink = document.querySelector('.logo-link');
-        if (logoLink) {
-            logoLink.addEventListener('click', () => {
-                if (primaryNav.classList.contains('active')) {
-                    closeMobileMenu();
-                }
-            });
-        }
-
-        // Close menu when pressing Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && primaryNav.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
-
-        // Close menu when clicking outside
+        // Close when clicking outside
         document.addEventListener('click', (e) => {
             if (primaryNav.classList.contains('active') && !primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
                 closeMobileMenu();
             }
         });
 
-        // Close menu if viewport resized to desktop breakpoint
+        // Close on window resize to desktop
         window.addEventListener('resize', () => {
             if (window.innerWidth > 1024 && primaryNav.classList.contains('active')) {
                 closeMobileMenu();
@@ -100,18 +84,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scrollspy Highlight Navigation Links
     function highlightActiveSection() {
-        if (!sections.length) return;
-        let scrollY = window.pageYOffset;
+        if (!sections.length || !navLinks.length) return;
+        const scrollY = window.pageYOffset;
 
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 100;
+            const sectionTop = current.offsetTop - 120;
             const sectionId = current.getAttribute('id');
 
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelector(`.nav-list a[href$="#${sectionId}"]`)?.classList.add('active');
-            } else {
-                document.querySelector(`.nav-list a[href$="#${sectionId}"]`)?.classList.remove('active');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    } else if (link.getAttribute('href').startsWith('#')) {
+                        link.classList.remove('active');
+                    }
+                });
             }
         });
     }
@@ -121,24 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================== */
     const themeToggleBtn = document.getElementById('theme-toggle');
 
-    // Check local storage or system preferences
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
-
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            let newTheme = 'light';
-
-            if (currentTheme === 'light') {
-                newTheme = 'dark';
-            }
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
@@ -149,10 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================
        3. SPOTIFY & YOUTUBE DYNAMIC EMBEDS
        ========================================== */
-    // El reproductor de Spotify se carga de forma oficial y directa en index.html.
-    // Lógica para obtener dinámicamente la descripción y título del último audio de Spotify:
     const spotifyTitleEl = document.getElementById('spotify-episode-title');
     const spotifyDescEl = document.getElementById('spotify-episode-desc');
+
     if (spotifyTitleEl && spotifyDescEl) {
         const spotifyRssUrl = 'https://anchor.fm/s/1bc6e8f8/podcast/rss';
         const spotifyApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(spotifyRssUrl)}`;
@@ -163,19 +136,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.status === 'ok' && data.items && data.items.length > 0) {
                     const latestEpisode = data.items[0];
                     if (latestEpisode) {
-                        // Limpiar etiquetas HTML de la descripción
                         const cleanDesc = latestEpisode.description.replace(/<\/?[^>]+(>|$)/g, "").trim();
-                        spotifyTitleEl.textContent = `Última Predicación: ${latestEpisode.title}`;
-                        spotifyDescEl.textContent = cleanDesc;
+                        spotifyTitleEl.textContent = latestEpisode.title;
+                        if (cleanDesc) {
+                            spotifyDescEl.textContent = cleanDesc.length > 160 ? `${cleanDesc.substring(0, 160)}...` : cleanDesc;
+                        }
                     }
                 }
             })
             .catch(err => {
-                console.error("Error al obtener el último episodio de Spotify:", err);
+                console.warn("Spotify RSS fetch skipped:", err);
             });
     }
 
-    // Lógica para obtener dinámicamente el último video de YouTube (evitando errores de playlist):
     const ytPlayer = document.getElementById('youtube-dynamic-player');
     if (ytPlayer) {
         const channelId = 'UC2-QFBw8CtEGVhx6Yg2jIlw';
@@ -186,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'ok' && data.items && data.items.length > 0) {
-                    // Filtrar para encontrar el último video de larga duración (evitando Shorts)
                     const latestSermon = data.items.find(item => item.link.includes('watch?v='));
                     if (latestSermon) {
                         const videoId = latestSermon.guid.replace('yt:video:', '');
@@ -195,34 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch(err => {
-                console.error("Error al obtener la última publicación de YouTube:", err);
+                console.warn("YouTube dynamic embed fetch skipped:", err);
             });
     }
 
     /* ==========================================
-       4. FACEBOOK MOCK LIKE BUTTON
-       ========================================== */
-    const fbLikeBtn = document.getElementById('fb-like-btn');
-    const fbLikeCount = document.getElementById('fb-like-count');
-    let fbLiked = false;
-    let baseLikes = 76;
-
-    if (fbLikeBtn && fbLikeCount) {
-        fbLikeBtn.addEventListener('click', () => {
-            fbLiked = !fbLiked;
-            if (fbLiked) {
-                fbLikeBtn.style.color = 'var(--brand-facebook)';
-                fbLikeCount.textContent = `Me gusta (${baseLikes + 1})`;
-                showToast('Te gusta esta publicación', 'success');
-            } else {
-                fbLikeBtn.style.color = 'var(--text-muted)';
-                fbLikeCount.textContent = `Me gusta (${baseLikes})`;
-            }
-        });
-    }
-
-    /* ==========================================
-       5. BIBLE PLAN INTERACTIVE WIDGET
+       4. BIBLE PLAN INTERACTIVE WIDGET
        ========================================== */
     const dateTitle = document.getElementById('widget-today-date');
     const passageText = document.getElementById('widget-today-passage');
@@ -243,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const day = today.getDate();
 
         if (dateTitle) {
-            dateTitle.textContent = `Lectura para hoy, ${day} de ${monthsSpanish[month]}`;
+            dateTitle.textContent = `Lectura para hoy, ${day} de ${monthsSpanish[month]}:`;
         }
 
         if (window.BIBLE_PLAN) {
@@ -257,10 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     displayReading(year, month, day);
                 })
                 .catch(err => {
-                    console.error('Error al cargar el plan de lectura:', err);
-                    if (passageText) {
-                        passageText.textContent = "Error al cargar la lectura de hoy.";
-                    }
+                    console.warn('Cargando lectura por defecto:', err);
+                    displayReading(year, month, day);
                 });
         } else {
             displayReading(year, month, day);
@@ -268,12 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayReading(year, month, day) {
-        let reading = "Juan 3 & Salmo 121"; // Default fallback
+        let reading = "Juan 3 & Salmo 121";
 
         if (bibleReadings[year] && bibleReadings[year][month] && bibleReadings[year][month][day - 1]) {
             reading = bibleReadings[year][month][day - 1];
         } else {
-            // Simulated generic plan reading for other years
             const dayOffset = (day + (month * 30)) % 150;
             reading = `Lectura Día ${dayOffset}: Lucas ${Math.floor(dayOffset / 5) + 1} & Salmo ${dayOffset + 10}`;
         }
@@ -282,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
             passageText.textContent = reading;
         }
 
-        // Load reading plan completed status from localStorage
         const storageKey = `bible_read_${year}_${month}_${day}`;
         const isRead = localStorage.getItem(storageKey) === 'true';
 
@@ -294,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateProgressBar(month) {
-        if (Object.keys(bibleReadings).length === 0) return;
+        if (!progressBar || !progressPercent) return;
 
         const today = new Date();
         const year = today.getFullYear();
@@ -305,13 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const key = `bible_read_${year}_${month}_${d}`;
             const isCompleted = localStorage.getItem(key) === 'true';
 
-            // Obtener el texto de la lectura para verificar si es domingo libre
             const readingsForMonth = bibleReadings[year] ? bibleReadings[year][month] : null;
             const readingText = readingsForMonth ? readingsForMonth[d - 1] : "";
             const isSundayFree = readingText === 'DOMINGO LIBRE';
 
-            // El día se considera completado si el usuario lo marcó,
-            // o si es un domingo libre que ya pasó (o es hoy)
             const dateToCheck = new Date(year, month, d);
             const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
             const hasPassed = dateToCheck <= todayStart;
@@ -321,12 +264,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        const percent = Math.round((completedCount / daysInMonth) * 100);
+        const percent = Math.min(100, Math.round((completedCount / daysInMonth) * 100));
 
-        if (progressBar && progressPercent) {
-            progressBar.style.width = `${percent}%`;
-            progressPercent.textContent = `${percent}%`;
-        }
+        progressBar.style.width = `${percent}%`;
+        progressPercent.textContent = `${percent}%`;
     }
 
     if (markReadCheckbox) {
@@ -338,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (markReadCheckbox.checked) {
                 localStorage.setItem(storageKey, 'true');
-                showToast('¡Lectura de hoy completada! Sigue así.', 'success');
+                showToast('¡Lectura de hoy completada! Gloria a Dios.', 'success');
             } else {
                 localStorage.removeItem(storageKey);
             }
@@ -349,132 +290,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadBibleReading();
 
-
     /* ==========================================
-       6. MINISTRIES DIALOG MODAL
-       ========================================== */
-    const ministryModal = document.getElementById('ministry-modal');
-    const modalClose = document.getElementById('modal-close');
-    const modalImage = document.getElementById('modal-image');
-    const modalTag = document.getElementById('modal-tag');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-description');
-    const modalSchedule = document.getElementById('modal-schedule');
-
-    // Details for each ministry
-    const ministryDetails = {
-        jovenes: {
-            title: "Grupo de Jóvenes",
-            tag: "Jóvenes",
-            img: "assets/jovenes.jpg",
-            schedule: "Sábados a las 3:00 p.m. en los hogares.",
-            desc: "Nos enfocamos en enseñar a los jóvenes cómo vivir bajo la luz de la Palabra de Dios en la sociedad contemporánea. A través de tiempos de alabanza, dinámicas, discipulado bíblico grupal y salidas fraternales, cultivamos amistades saludables arraigadas en Cristo."
-        },
-        ninos: {
-            title: "Escuela Dominical",
-            tag: "Niños y Adolescentes",
-            img: "assets/escuela_dominical.jpg",
-            schedule: "Domingos a las 9:30 a.m. durante el servicio general.",
-            desc: "Nuestros niños aprenden las verdades de la Biblia en un ambiente seguro, divertido y adaptado a sus edades. Los maestros enseñan de forma cronológica e interactiva, utilizando manualidades, cantos y lecciones bíblicas fieles que construyen fundamentos espirituales firmes en Cristo."
-        },
-        oracion: {
-            title: "Grupos de Oración en Casa",
-            tag: "Comunidad",
-            img: "assets/comunidad_oracion.jpg",
-            schedule: "Miércoles a las 6:30 p.m. y Jueves a las 2:30 p.m. en diferentes sectores.",
-            desc: "Creemos firmemente en el poder del clamor y la vida en comunidad. En estos grupos en hogares compartimos un café, estudiamos las Escrituras de manera informal y dedicamos tiempo a orar los unos por los otros, fortaleciendo el cuidado mutuo pastoral."
-        },
-        social: {
-            title: "Ministerio del Galán",
-            tag: "Servicio",
-            img: "assets/labor_social.jpg",
-            schedule: "Viernes y Sábados.",
-            desc: "Llevamos el amor de Cristo a la práctica. Trabajamos en la comunidad, donde realizamos reuniones recreativas, juegos, refrigerios y lecciones bíblicas dinámicas para niños y adolescentes con el fin de apoyarlos en sus entornos de vida."
-        },
-        alabanza: {
-            title: "Alabanza y Adoración",
-            tag: "Música",
-            img: "assets/alabanza.jpg",
-            schedule: "Domingos a las 9:30 a.m.",
-            desc: "Este ministerio se enfoca en guiar a la iglesia en la adoración colectiva. Buscamos cantar y exaltar a Dios con excelencia, reverencia y alegría, entonando himnos y cantos congregacionales centrados en la verdad del evangelio."
-        },
-        misiones: {
-            title: "Misiones y Evangelismo",
-            tag: "Misiones",
-            img: "assets/misiones.jpg",
-            // isSvg: true,
-            schedule: "Jornadas especiales planificadas anualmente.",
-            desc: "Comprometidos con la Gran Comisión de Mateo 28. Apoyamos a misioneros en diferentes campos e implementamos esfuerzos locales de evangelismo personal y comunitario para dar a conocer las buenas nuevas de salvación en Fusagasugá y sus alrededores."
-        }
-    };
-
-    document.querySelectorAll('.ministry-card').forEach(card => {
-        card.querySelector('.open-ministry-modal').addEventListener('click', (e) => {
-            e.stopPropagation();
-            const minKey = card.getAttribute('data-ministry');
-            const data = ministryDetails[minKey];
-
-            if (data) {
-                // Populate Modal Data
-                modalTitle.textContent = data.title;
-                modalTag.textContent = data.tag;
-                modalDesc.textContent = data.desc;
-                modalSchedule.textContent = data.schedule;
-
-                if (data.isSvg) {
-                    modalImage.style.backgroundImage = 'none';
-                    modalImage.innerHTML = `<div class="ministry-img-placeholder" style="height:100%">${card.querySelector('.ministry-img-placeholder').innerHTML}</div>`;
-                } else {
-                    modalImage.innerHTML = '';
-                    modalImage.style.backgroundImage = `url('${data.img}')`;
-                }
-
-                // Open Modal
-                ministryModal.classList.add('active');
-                ministryModal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden'; // Lock background scroll
-            }
-        });
-    });
-
-    function closeMinistryModal() {
-        if (ministryModal) {
-            ministryModal.classList.remove('active');
-            ministryModal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-        }
-    }
-
-    if (modalClose) {
-        modalClose.addEventListener('click', closeMinistryModal);
-    }
-
-    if (ministryModal) {
-        ministryModal.addEventListener('click', (e) => {
-            if (e.target === ministryModal) {
-                closeMinistryModal();
-            }
-        });
-    }
-
-    /* ==========================================
-       6b. DECLARATION OF FAITH MODAL
+       5. DECLARATION OF FAITH MODAL
        ========================================== */
     const declaracionModal = document.getElementById('declaracion-modal');
     const openDeclaracionBtns = document.querySelectorAll('#open-declaracion-modal, .open-declaracion-modal');
     const closeDeclaracionBtn = document.getElementById('declaracion-modal-close');
 
-    if (declaracionModal && openDeclaracionBtns.length) {
-        openDeclaracionBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                declaracionModal.classList.add('active');
-                declaracionModal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            });
-        });
+    function openDeclaracion() {
+        if (declaracionModal) {
+            declaracionModal.classList.add('active');
+            declaracionModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
     }
 
-    function closeDeclaracionModal() {
+    function closeDeclaracion() {
         if (declaracionModal) {
             declaracionModal.classList.remove('active');
             declaracionModal.setAttribute('aria-hidden', 'true');
@@ -482,48 +313,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    if (openDeclaracionBtns.length) {
+        openDeclaracionBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openDeclaracion();
+            });
+        });
+    }
+
     if (closeDeclaracionBtn) {
-        closeDeclaracionBtn.addEventListener('click', closeDeclaracionModal);
+        closeDeclaracionBtn.addEventListener('click', closeDeclaracion);
     }
 
     if (declaracionModal) {
         declaracionModal.addEventListener('click', (e) => {
             if (e.target === declaracionModal) {
-                closeDeclaracionModal();
+                closeDeclaracion();
             }
         });
     }
 
-
     /* ==========================================
-       7. GALLERY FILTERING
-       ========================================== */
-    const galleryFilterBtns = document.querySelectorAll('.btn-gallery');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    galleryFilterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class
-            galleryFilterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filterValue = btn.getAttribute('data-filter');
-
-            galleryItems.forEach(item => {
-                const category = item.getAttribute('data-category');
-
-                if (filterValue === 'all' || category === filterValue) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        });
-    });
-
-
-    /* ==========================================
-       8. GALLERY LIGHTBOX
+       6. CURATED MOMENTS GALLERY LIGHTBOX
        ========================================== */
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-image');
@@ -531,43 +343,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxClose = document.getElementById('lightbox-close');
     const lightboxPrev = document.getElementById('lightbox-prev');
     const lightboxNext = document.getElementById('lightbox-next');
+    const momentCards = document.querySelectorAll('.moment-card');
 
-    let currentImageIndex = 0;
-    let visibleGalleryItems = [];
+    let currentMomentIndex = 0;
 
-    function updateVisibleItems() {
-        visibleGalleryItems = Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+    function showLightbox(index) {
+        if (!momentCards.length) return;
+        if (index < 0) index = momentCards.length - 1;
+        if (index >= momentCards.length) index = 0;
+
+        currentMomentIndex = index;
+        const card = momentCards[currentMomentIndex];
+        const imgSrc = card.getAttribute('data-img') || '';
+        const caption = card.getAttribute('data-caption') || '';
+
+        if (lightboxImg) lightboxImg.src = imgSrc;
+        if (lightboxCaption) lightboxCaption.textContent = caption;
+
+        if (lightbox) {
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
     }
-
-    function showLightboxImage(index) {
-        if (index < 0) index = visibleGalleryItems.length - 1;
-        if (index >= visibleGalleryItems.length) index = 0;
-
-        currentImageIndex = index;
-        const targetItem = visibleGalleryItems[currentImageIndex];
-
-        // Extract background image URL
-        const bgStyle = window.getComputedStyle(targetItem).backgroundImage;
-        const imgUrl = bgStyle.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
-        const desc = targetItem.getAttribute('data-description');
-
-        lightboxImg.src = imgUrl;
-        lightboxCaption.textContent = desc;
-    }
-
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            updateVisibleItems();
-            const index = visibleGalleryItems.indexOf(item);
-
-            if (index !== -1) {
-                showLightboxImage(index);
-                lightbox.classList.add('active');
-                lightbox.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
 
     function closeLightbox() {
         if (lightbox) {
@@ -577,9 +375,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    momentCards.forEach((card, idx) => {
+        card.addEventListener('click', () => {
+            showLightbox(idx);
+        });
+    });
+
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-    if (lightboxPrev) lightboxPrev.addEventListener('click', () => showLightboxImage(currentImageIndex - 1));
-    if (lightboxNext) lightboxNext.addEventListener('click', () => showLightboxImage(currentImageIndex + 1));
+    if (lightboxPrev) lightboxPrev.addEventListener('click', () => showLightbox(currentMomentIndex - 1));
+    if (lightboxNext) lightboxNext.addEventListener('click', () => showLightbox(currentMomentIndex + 1));
 
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
@@ -589,22 +393,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Keyboard Shortcuts for Modals & Lightbox
+    // Global Keydown (Escape, Arrows)
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            closeMinistryModal();
+            closeDeclaracion();
             closeLightbox();
-            closeDeclaracionModal();
+            closeMobileMenu();
         }
         if (lightbox && lightbox.classList.contains('active')) {
-            if (e.key === 'ArrowLeft') showLightboxImage(currentImageIndex - 1);
-            if (e.key === 'ArrowRight') showLightboxImage(currentImageIndex + 1);
+            if (e.key === 'ArrowLeft') showLightbox(currentMomentIndex - 1);
+            if (e.key === 'ArrowRight') showLightbox(currentMomentIndex + 1);
         }
     });
 
-
     /* ==========================================
-       9. CONTACT FORM VALIDATION & TOASTS
+       7. CONTACT FORM VALIDATION & AJAX SUBMIT
        ========================================== */
     let toastContainer = document.getElementById('toast-container');
     const contactForm = document.getElementById('contact-form');
@@ -620,13 +423,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const toast = document.createElement('div');
         toast.className = `toast ${type}`;
 
-        let icon = '&#10003;'; // Checkmark
-        if (type === 'error') icon = '&#9888;'; // Warning
+        let icon = '✓';
+        if (type === 'error') icon = '⚠';
 
         toast.innerHTML = `<span>${icon}</span><p>${message}</p>`;
         toastContainer.appendChild(toast);
 
-        // Trigger reflow
         toast.offsetHeight;
         toast.classList.add('show');
 
@@ -647,8 +449,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             inputs.forEach(input => {
                 const formGroup = input.parentElement;
-
-                // Reset errors
                 formGroup.classList.remove('invalid');
 
                 if (!input.value.trim()) {
@@ -656,7 +456,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     isValid = false;
                 }
 
-                // Email format check
                 if (input.type === 'email' && input.value.trim()) {
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(input.value.trim())) {
@@ -670,10 +469,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isValid) {
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const origText = submitBtn.textContent;
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Enviando...';
 
-                // Enviar datos a la API de Web3Forms
                 const formData = new FormData(contactForm);
                 const object = Object.fromEntries(formData);
                 const json = JSON.stringify(object);
@@ -689,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(async (response) => {
                         const res = await response.json();
                         if (response.status === 200) {
-                            showToast('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.', 'success');
+                            showToast('¡Mensaje enviado con éxito! Nos comunicaremos pronto.', 'success');
                             contactForm.reset();
                             if (typeof hcaptcha !== 'undefined') hcaptcha.reset();
                         } else {
@@ -703,23 +502,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                     .finally(() => {
                         submitBtn.disabled = false;
-                        submitBtn.textContent = 'Enviar Mensaje';
+                        submitBtn.textContent = origText;
                     });
             } else {
-                showToast('Por favor, completa correctamente los campos obligatorios.', 'error');
+                showToast('Por favor completa los campos requeridos.', 'error');
             }
         });
 
-        // Live input check on blur
         contactForm.querySelectorAll('input[required], textarea[required]').forEach(input => {
-            input.addEventListener('blur', () => {
-                const formGroup = input.parentElement;
-                if (!input.value.trim()) {
-                    formGroup.classList.add('invalid');
-                } else {
-                    formGroup.classList.remove('invalid');
-                }
-            });
             input.addEventListener('input', () => {
                 const formGroup = input.parentElement;
                 if (input.value.trim()) {

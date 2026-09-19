@@ -1,0 +1,6 @@
+# Configuración de Servidor Apache - Iglesia Bautista Sumapaz
+
+# Redirección para páginas no encontradas (Error 404)
+# Nota: Si estás probando localmente en un subdirectorio (ej. http://localhost/ibs/), 
+# puedes cambiar esta ruta a: ErrorDocument 404 /ibs/404.html
+ErrorDocument 404 /404.html
