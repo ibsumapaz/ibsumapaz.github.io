@@ -566,7 +566,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, rgba(8, 13, 17, 0.35) 0%, rgba(8, 13, 17, 0.7) 65%, var(--bg-color) 100%), url('../assets/hero_bg.jpg');
+    background-image: linear-gradient(180deg, rgba(8, 13, 17, 0.35) 0%, rgba(8, 13, 17, 0.7) 65%, var(--bg-color) 100%), url('../assets/hero_bg.webp');
     background-size: cover;
     background-position: center 30%;
     opacity: 0.68;
@@ -576,8 +576,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] .hero-bg-overlay {
-    background-image: linear-gradient(180deg, rgba(244, 248, 250, 0.3) 0%, rgba(244, 248, 250, 0.7) 65%, var(--bg-color) 100%), url('../assets/hero_bg.jpg');
+    background-image: linear-gradient(180deg, rgba(244, 248, 250, 0.3) 0%, rgba(244, 248, 250, 0.7) 65%, var(--bg-color) 100%), url('../assets/hero_bg.webp');
     opacity: 0.48;
+}
+
+@media (max-width: 768px) {
+    .hero-bg-overlay {
+        background-image: linear-gradient(180deg, rgba(8, 13, 17, 0.35) 0%, rgba(8, 13, 17, 0.7) 65%, var(--bg-color) 100%), url('../assets/hero_bg_mobile.webp');
+    }
+    [data-theme="light"] .hero-bg-overlay {
+        background-image: linear-gradient(180deg, rgba(244, 248, 250, 0.3) 0%, rgba(244, 248, 250, 0.7) 65%, var(--bg-color) 100%), url('../assets/hero_bg_mobile.webp');
+    }
 }
 
 .hero-container {
@@ -1409,9 +1418,11 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    background-color: var(--surface-card);
     background-size: cover;
     background-position: center;
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    background-repeat: no-repeat;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), opacity 0.3s ease;
 }
 
 .moment-card:hover {

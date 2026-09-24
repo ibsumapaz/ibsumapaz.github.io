@@ -121,10 +121,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================
-       3. SPOTIFY & YOUTUBE DYNAMIC EMBEDS
+       3. SPOTIFY & YOUTUBE DYNAMIC EMBEDS (LAZY LOADED)
        ========================================== */
     const spotifyTitleEl = document.getElementById('spotify-episode-title');
     const spotifyDescEl = document.getElementById('spotify-episode-desc');
+    const spotifyPlayer = document.getElementById('spotify-dynamic-player');
+    const ytPlayer = document.getElementById('youtube-dynamic-player');
+
+    let dynamicYtUrl = null;
+
+    // Lazy load media iframes when entering viewport to prevent blocking main thread
+    const mediaIframes = [spotifyPlayer, ytPlayer].filter(Boolean);
+    if ('IntersectionObserver' in window) {
+        const mediaObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target;
+                    if (iframe.id === 'youtube-dynamic-player' && dynamicYtUrl) {
+                        iframe.src = dynamicYtUrl;
+                    } else if (iframe.dataset.src && (!iframe.src || iframe.src === 'about:blank')) {
+                        iframe.src = iframe.dataset.src;
+                    }
+                    observer.unobserve(iframe);
+                }
+            });
+        }, { rootMargin: '300px 0px' });
+
+        mediaIframes.forEach(iframe => mediaObserver.observe(iframe));
+    } else {
+        mediaIframes.forEach(iframe => {
+            if (iframe.dataset.src) iframe.src = iframe.dataset.src;
+        });
+    }
 
     if (spotifyTitleEl && spotifyDescEl) {
         const spotifyRssUrl = 'https://anchor.fm/s/1bc6e8f8/podcast/rss';
@@ -149,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    const ytPlayer = document.getElementById('youtube-dynamic-player');
     if (ytPlayer) {
         const channelId = 'UC2-QFBw8CtEGVhx6Yg2jIlw';
         const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
@@ -162,7 +189,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     const latestSermon = data.items.find(item => item.link.includes('watch?v='));
                     if (latestSermon) {
                         const videoId = latestSermon.guid.replace('yt:video:', '');
-                        ytPlayer.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+                        const newUrl = `https://www.youtube.com/embed/${videoId}?rel=0`;
+                        dynamicYtUrl = newUrl;
+                        if (ytPlayer.src && ytPlayer.src !== 'about:blank') {
+                            ytPlayer.src = newUrl;
+                        } else {
+                            ytPlayer.dataset.src = newUrl;
+                        }
                     }
                 }
             })
@@ -335,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================
-       6. CURATED MOMENTS GALLERY LIGHTBOX
+       6. CURATED MOMENTS GALLERY & LAZY LOADING
        ========================================== */
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-image');
@@ -347,6 +380,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentMomentIndex = 0;
 
+    // Lazy load gallery backgrounds as user scrolls near them
+    if ('IntersectionObserver' in window) {
+        const bgObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    const bgUrl = card.getAttribute('data-bg');
+                    if (bgUrl) {
+                        card.style.backgroundImage = `url('${bgUrl}')`;
+                    }
+                    observer.unobserve(card);
+                }
+            });
+        }, { rootMargin: '250px 0px' });
+
+        momentCards.forEach(card => {
+            if (card.hasAttribute('data-bg')) {
+                bgObserver.observe(card);
+            }
+        });
+    } else {
+        momentCards.forEach(card => {
+            const bgUrl = card.getAttribute('data-bg');
+            if (bgUrl) card.style.backgroundImage = `url('${bgUrl}')`;
+        });
+    }
+
     function showLightbox(index) {
         if (!momentCards.length) return;
         if (index < 0) index = momentCards.length - 1;
@@ -354,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         currentMomentIndex = index;
         const card = momentCards[currentMomentIndex];
-        const imgSrc = card.getAttribute('data-img') || '';
+        const imgSrc = card.getAttribute('data-img') || card.getAttribute('data-bg') || '';
         const caption = card.getAttribute('data-caption') || '';
 
         if (lightboxImg) lightboxImg.src = imgSrc;
@@ -407,10 +467,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================
-       7. CONTACT FORM VALIDATION & AJAX SUBMIT
+       7. CONTACT FORM VALIDATION & ON-DEMAND SCRIPT
        ========================================== */
     let toastContainer = document.getElementById('toast-container');
     const contactForm = document.getElementById('contact-form');
+    const contactSection = document.getElementById('contacto');
+
+    // On-demand loader for Web3Forms/hCaptcha script
+    let isWeb3FormsLoaded = false;
+    function loadWeb3FormsScript() {
+        if (isWeb3FormsLoaded) return;
+        isWeb3FormsLoaded = true;
+        const script = document.createElement('script');
+        script.src = 'https://web3forms.com/client/script.js';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+    }
+
+    if (contactForm) {
+        // Load captcha script when user focuses any input
+        contactForm.addEventListener('focusin', loadWeb3FormsScript, { once: true });
+
+        // Or load when user scrolls near the contact section
+        if (contactSection && 'IntersectionObserver' in window) {
+            const contactObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    loadWeb3FormsScript();
+                    contactObserver.disconnect();
+                }
+            }, { rootMargin: '300px 0px' });
+            contactObserver.observe(contactSection);
+        }
+    }
 
     function showToast(message, type = 'success') {
         if (!toastContainer) {

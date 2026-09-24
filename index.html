@@ -27,7 +27,7 @@
     <meta property="og:title" content="Iglesia Bautista Sumapaz | Predicando con Fidelidad y Claridad">
     <meta property="og:description"
         content="Únete a nosotros en nuestros servicios dominicales y actividades semanales. Predicando la Palabra de Dios con claridad y fidelidad en Fusagasugá.">
-    <meta property="og:image" content="assets/hero_bg.jpg">
+    <meta property="og:image" content="assets/hero_bg.webp">
     <meta property="og:url" content="https://iglesiabautistasumapaz.org/">
     <meta property="og:type" content="website">
 
@@ -36,7 +36,11 @@
     <meta name="twitter:title" content="Iglesia Bautista Sumapaz | Predicando con Fidelidad y Claridad">
     <meta name="twitter:description"
         content="Conoce nuestros horarios de reuniones, enseñanzas, recursos y acompáñanos en la comunión y estudio de la Palabra de Dios en Fusagasugá.">
-    <meta name="twitter:image" content="assets/hero_bg.jpg">
+    <meta name="twitter:image" content="assets/hero_bg.webp">
+
+    <!-- Preload Critical LCP Hero Image -->
+    <link rel="preload" as="image" href="assets/hero_bg_mobile.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/hero_bg.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
 
     <!-- Fonts (Outfit for Headers, Inter for Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,9 +51,6 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Script de Captcha para Web3Forms -->
-    <script src="https://web3forms.com/client/script.js" async defer></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
@@ -302,7 +303,10 @@
 
                             <div class="bento-media-wrapper">
                                 <iframe style="border-radius:12px"
-                                    src="https://open.spotify.com/embed/show/2WONi2DdFl5oHKLg0FNgMj?utm_source=generator&theme=0"
+                                    id="spotify-dynamic-player"
+                                    title="Podcast Iglesia Bautista Sumapaz en Spotify"
+                                    data-src="https://open.spotify.com/embed/show/2WONi2DdFl5oHKLg0FNgMj?utm_source=generator&theme=0"
+                                    src="about:blank"
                                     height="152" frameBorder="0" allowfullscreen=""
                                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                                     loading="lazy"></iframe>
@@ -398,9 +402,12 @@
 
                             <div class="bento-media-wrapper" style="aspect-ratio: 16/9;">
                                 <iframe id="youtube-dynamic-player" width="100%" height="220"
-                                    src="https://www.youtube.com/embed/9x7mk2KgeYk" frameborder="0"
+                                    title="Predicaciones Iglesia Bautista Sumapaz en YouTube"
+                                    data-src="https://www.youtube.com/embed/9x7mk2KgeYk"
+                                    src="about:blank" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
+                                    loading="lazy"
                                     style="border-radius: 12px; border: 1px solid var(--border-color);"></iframe>
                             </div>
                         </div>
@@ -506,7 +513,7 @@
                     <!-- Pastoral Ministry Card -->
                     <div class="about-pastors-card card-glass">
                         <div class="pastors-img-wrap">
-                            <img src="assets/predicacion.jpg" alt="Pastor Alejandro Morales predicando" loading="lazy">
+                            <img src="assets/predicacion.webp" alt="Pastor Alejandro Morales predicando" loading="lazy" decoding="async" width="400" height="300">
                         </div>
                         <div class="pastors-info">
                             <h3>Pastor Alejandro Morales</h3>
@@ -734,8 +741,9 @@
                 </div>
 
                 <div class="moments-grid">
-                    <div class="moment-card" style="background-image: url('assets/hermanos.jpg');"
-                        data-img="assets/hermanos.jpg"
+                    <div class="moment-card"
+                        data-bg="assets/hermanos.webp"
+                        data-img="assets/hermanos.webp"
                         data-caption="Reunión Dominical en el Salón Comunal La Casona del Mirador">
                         <div class="moment-overlay">
                             <span class="moment-tag">Adoración</span>
@@ -743,16 +751,19 @@
                         </div>
                     </div>
 
-                    <div class="moment-card" style="background-image: url('assets/mujeres.jpg');"
-                        data-img="assets/mujeres.jpg" data-caption="Reunión y discipulado de mujeres">
+                    <div class="moment-card"
+                        data-bg="assets/mujeres.webp"
+                        data-img="assets/mujeres.webp"
+                        data-caption="Reunión y discipulado de mujeres">
                         <div class="moment-overlay">
                             <span class="moment-tag">Mujeres</span>
                             <h4 class="moment-title">Reunión de Mujeres</h4>
                         </div>
                     </div>
 
-                    <div class="moment-card" style="background-image: url('assets/varones.jpg');"
-                        data-img="assets/varones.jpg"
+                    <div class="moment-card"
+                        data-bg="assets/varones.webp"
+                        data-img="assets/varones.webp"
                         data-caption="Tiempo de comunión, estudio bíblico y edificación para varones">
                         <div class="moment-overlay">
                             <span class="moment-tag">Varones</span>
@@ -760,8 +771,9 @@
                         </div>
                     </div>
 
-                    <div class="moment-card" style="background-image: url('assets/adolescentes-2.jpg');"
-                        data-img="assets/adolescentes-2.jpg"
+                    <div class="moment-card"
+                        data-bg="assets/adolescentes-2.webp"
+                        data-img="assets/adolescentes-2.webp"
                         data-caption="Escuela Dominical: Los maestros enseñando la Palabra de Dios a los adolescentes">
                         <div class="moment-overlay">
                             <span class="moment-tag">Enseñanza</span>
@@ -769,8 +781,9 @@
                         </div>
                     </div>
 
-                    <div class="moment-card" style="background-image: url('assets/escuela_dominical.jpg');"
-                        data-img="assets/escuela_dominical.jpg"
+                    <div class="moment-card"
+                        data-bg="assets/escuela_dominical.webp"
+                        data-img="assets/escuela_dominical.webp"
                         data-caption="Escuela Dominical: Los maestros enseñando la Palabra de Dios a los niños">
                         <div class="moment-overlay">
                             <span class="moment-tag">Enseñanza</span>
@@ -778,8 +791,9 @@
                         </div>
                     </div>
 
-                    <div class="moment-card" style="background-image: url('assets/alabanza.jpg');"
-                        data-img="assets/alabanza.jpg"
+                    <div class="moment-card"
+                        data-bg="assets/alabanza.webp"
+                        data-img="assets/alabanza.webp"
                         data-caption="Adorando a Dios con cánticos e himnos espirituales">
                         <div class="moment-overlay">
                             <span class="moment-tag">Alabanza</span>
@@ -787,8 +801,9 @@
                         </div>
                     </div>
 
-                    <div class="moment-card" style="background-image: url('assets/comunidad_oracion.jpg');"
-                        data-img="assets/comunidad_oracion.jpg"
+                    <div class="moment-card"
+                        data-bg="assets/comunidad_oracion.webp"
+                        data-img="assets/comunidad_oracion.webp"
                         data-caption="Tiempos de comunión y oración en los hogares">
                         <div class="moment-overlay">
                             <span class="moment-tag">Hogares</span>
@@ -796,16 +811,19 @@
                         </div>
                     </div>
 
-                    <div class="moment-card" style="background-image: url('assets/labor_social.jpg');"
-                        data-img="assets/labor_social.jpg" data-caption="Labor comunitaria con enfoque evangelístico">
+                    <div class="moment-card"
+                        data-bg="assets/labor_social.webp"
+                        data-img="assets/labor_social.webp"
+                        data-caption="Labor comunitaria con enfoque evangelístico">
                         <div class="moment-overlay">
                             <span class="moment-tag">Servicio</span>
                             <h4 class="moment-title">Ministerio del Galán</h4>
                         </div>
                     </div>
 
-                    <div class="moment-card" style="background-image: url('assets/familia_pastoral.jpg');"
-                        data-img="assets/familia_pastoral.jpg"
+                    <div class="moment-card"
+                        data-bg="assets/familia_pastoral.webp"
+                        data-img="assets/familia_pastoral.webp"
                         data-caption="Pastor Alejandro Morales junto a su esposa Laura">
                         <div class="moment-overlay">
                             <span class="moment-tag">Pastoral</span>
@@ -1276,8 +1294,8 @@
     <div class="toast-container" id="toast-container"></div>
 
     <!-- Scripts -->
-    <script src="assets/bible_plan.js"></script>
-    <script src="js/app.js"></script>
+    <script src="assets/bible_plan.js" defer></script>
+    <script src="js/app.js" defer></script>
 
     <!-- Logos RefTagger for Spanish Bible Verses -->
     <script>
