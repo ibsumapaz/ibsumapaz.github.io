@@ -2981,8 +2981,7 @@
           "Eres mi protector,",
           "llenas mi corazón",
           "Con cánticos de liberación;",
-          "De angustia me",
-          "guardarás.",
+          "De angustia me guardarás.",
           "Confiaré en ti."
         ]
       }
@@ -7830,24 +7829,21 @@
       {
         "label": "1",
         "lines": [
-          "Dios desde el cielo al Salvador",
-          "mandó a morir por mí.",
-          "Por ti murió, por mí murió;",
-          "dio sangre carmesí.",
           "¡Oh qué amor!",
-          "¡Qué inmenso amor!",
-          "el de mi Salvador."
+          "¡Qué inmenso amor! el de mi Salvador.",
+          "¡Oh qué amor!",
+          "¡Qué inmenso amor! el de mi Salvador.",
+          "Dios desde el cielo al Salvador",
+          "mandó a morir por mí."
         ]
       },
       {
         "label": "2",
         "lines": [
+          "Por ti murió, por mí murió;",
+          "dio sangre carmesí.",
           "¡Oh qué amor!",
-          "¡Qué inmenso amor!",
-          "el de mi Salvador.",
-          "¡Oh qué amor!",
-          "¡Qué inmenso amor!",
-          "el de mi Salvador."
+          "¡Qué inmenso amor! el de mi Salvador."
         ]
       }
     ],
@@ -8164,7 +8160,7 @@
         "lines": [
           "Cada día viene a darme nuevo aliento;",
           "A mi corazón infunde dulce paz;",
-          "No comprenderá por qué vino a salvarme,",
+          "No comprenderé por qué vino a salvarme,",
           "Hasta que en el cielo pueda ver su faz."
         ]
       }
@@ -12055,8 +12051,9 @@
         "label": "1",
         "lines": [
           "Dios nos ha dado promesa:",
-          "lluvias de gracia enviará,",
-          "Dones que os den fortaleza; gran bendición os daré."
+          "lluvias de gracia enviaré,",
+          "Dones que os den fortaleza;",
+          "gran bendición os daré."
         ]
       },
       {
@@ -12064,7 +12061,8 @@
         "lines": [
           "Cristo nos dio la promesa",
           "del Santo Consolador,",
-          "Dándonos paz y pureza, para su gloria y honor."
+          "Dándonos paz y pureza,",
+          "para su gloria y honor."
         ]
       },
       {
@@ -12072,7 +12070,8 @@
         "lines": [
           "¡Oh Dios, a todo creyente",
           "muestra tu amor y poder!",
-          "Tú eres de gracia la fuente; llena de paz nuestro ser."
+          "Tú eres de gracia la fuente;",
+          "llena de paz nuestro ser."
         ]
       },
       {
@@ -12090,7 +12089,8 @@
         "lines": [
           "Lluvias (lluvias) de gracia,",
           "lluvias pedimos, Señor;",
-          "Mándanos lluvias copiosas, lluvias del Consolador."
+          "Mándanos lluvias copiosas,",
+          "lluvias del Consolador."
         ]
       }
     ],
@@ -15040,10 +15040,14 @@
       {
         "label": "1",
         "lines": [
-          "Ven amigo a Jesús, pues él murió por ti;",
-          "Recibirás la luz que quiere darte a ti.",
-          "Mi buen Jesús murió para darte perdón;",
-          "Abre tu corazón y dulce paz tendrás."
+          "Ven amigo a Jesús,",
+          "pues él murió por ti;",
+          "Recibirás la luz",
+          "que quiere darte a ti.",
+          "Mi buen Jesús murió",
+          "para darte perdón;",
+          "Abre tu corazón",
+          "y dulce paz tendrás."
         ]
       },
       {
@@ -15051,22 +15055,26 @@
         "lines": [
           "Las manos del Señor",
           "se abren hoy para ti;",
-          "Ven y confía en él, y serás muy feliz.",
+          "Ven y confía en él,",
+          "y serás muy feliz.",
           "Tus cuitas pon en Dios,",
           "pues él las llevará;",
-          "Quitaré tu pesar por su consolación."
+          "Quitará tu pesar",
+          "por su consolación."
         ]
       }
     ],
     "choruses": [
       {
         "lines": [
-          "Día fatal vendrá cuando",
-          "no habrá lugar;",
-          "La puerta se abre hoy, y té podrás entrar.",
+          "Día fatal vendrá",
+          "cuando no habrá lugar;",
+          "La puerta se abre hoy,",
+          "y tú podrás entrar.",
           "Más gracia ya no habrá,",
           "pues despreciaste hoy;",
-          "Acepta, pecador, la salvación de Dios."
+          "Acepta, pecador,",
+          "la salvación de Dios."
         ]
       }
     ],
@@ -17916,7 +17924,7 @@
         "lines": [
           "Igual que hoy más días pasarán,",
           "Y algunos que, tal vez, el sol no lucirá.",
-          "SÉ bien que Dios conmigo está,",
+          "Sé bien que Dios conmigo está,",
           "Y aquel que espera en él, en paz descansará."
         ]
       },
