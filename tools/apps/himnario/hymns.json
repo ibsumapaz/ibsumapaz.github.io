@@ -2246,9 +2246,10 @@
         "lines": [
           "Grandes y maravillosas son tus obras,",
           "Señor Dios Todopoderoso;",
-          "Justos y verdaderos",
-          "son tus caminos, Rey de los santos,",
-          "Rey de los santos, Rey de los santos."
+          "Justos y verdaderos son tus caminos,",
+          "Rey de los santos,",
+          "Rey de los santos,",
+          "Rey de los santos."
         ]
       },
       {
@@ -2265,9 +2266,10 @@
       {
         "label": "3",
         "lines": [
-          "Temed a Dios y dadle gloria, porque su juicio",
-          "ha llegado; Y adorad a aquel que hizo el cielo y",
-          "la tierra, el mar y las fuentes de las aguas.",
+          "Temed a Dios y dadle gloria,",
+          "porque su juicio ha llegado;",
+          "Y adorad a aquel que hizo el cielo",
+          "y la tierra, el mar y las fuentes de las aguas.",
           "¡Aleluya, amén! ¡Aleluya, amén!",
           "¡Aleluya, amén! ¡Aleluya, amén!"
         ]
@@ -20465,22 +20467,19 @@
       {
         "label": "1",
         "lines": [
-          "Señor, tú me llamas por mi nombre",
-          "desde lejos; Por mi nombre cada día tú",
-          "me llamas. Señor, tú me ofreces una vida",
-          "santa y limpia; Una vida sin pecado,",
-          "sin maldad."
+          "Señor, tú me llamas por mi nombre desde lejos;",
+          "Por mi nombre cada día tú me llamas.",
+          "Señor, tú me ofreces una vida santa y limpia;",
+          "Una vida sin pecado, sin maldad."
         ]
       },
       {
         "label": "2",
         "lines": [
-          "Señor, tú me llamas por mi nombre",
-          "desde lejos; Por mi nombre",
-          "cada día tú me llamas.",
-          "Señor, yo acudo a tu llamado",
-          "a cada instante, pues mi gozo",
-          "es servirte más y más."
+          "Señor, tú me llamas por mi nombre desde lejos;",
+          "Por mi nombre cada día tú me llamas.",
+          "Señor, yo acudo a tu llamado a cada instante,",
+          "pues mi gozo es servirte más y más."
         ]
       },
       {
@@ -20496,18 +20495,9 @@
       {
         "lines": [
           "Señor, nada tengo para darte;",
-          "Solamente te ofrezco",
-          "mi vida para que la uses tú.",
-          "Señor, hazme hoy un siervo útil que anuncie",
-          "el mensaje, el mensaje de la cruz."
-        ]
-      },
-      {
-        "lines": [
-          "Señor, nada tengo para darte; Solamente te ofrezco",
-          "mi vida para que la uses tú.",
-          "Señor, hazme hoy un siervo útil que anuncie",
-          "el mensaje, el mensaje de la cruz."
+          "Solamente te ofrezco mi vida para que la uses tú.",
+          "Señor, hazme hoy un siervo útil",
+          "que anuncie el mensaje, el mensaje de la cruz."
         ]
       }
     ],
