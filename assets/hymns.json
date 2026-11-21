@@ -5450,24 +5450,30 @@
         "label": "1",
         "lines": [
           "¡Al mundo paz, nació Jesús!",
-          "Nació ya nuestro Rey; el corazón ya tiene luz,",
-          "// Y paz su santa grey, // y paz, y paz su santa grey."
+          "Nació ya nuestro Rey;",
+          "el corazón ya tiene luz,",
+          "// Y paz su santa grey, //",
+          "y paz, y paz su santa grey."
         ]
       },
       {
         "label": "2",
         "lines": [
           "¡Al mundo paz, el Salvador",
-          "En tierra reinará! ya es feliz el pecador,",
-          "// Jesús perdón le da, // Jesús, Jesús perdón le da."
+          "En tierra reinará!",
+          "ya es feliz el pecador,",
+          "// Jesús perdón le da, //",
+          "Jesús, Jesús perdón le da."
         ]
       },
       {
         "label": "3",
         "lines": [
-          "Al mundo él gobernará con gracia y con poder;",
+          "Al mundo él gobernará",
+          "con gracia y con poder;",
           "A las naciones mostrará",
-          "// Su amor y su poder, // Su amor, su amor y su poder."
+          "// Su amor y su poder, //",
+          "Su amor, su amor y su poder."
         ]
       }
     ],
@@ -11181,10 +11187,12 @@
         "lines": [
           "Cordero, que bajaste del cielo",
           "a morir en la cruz",
-          "para darme la luz y tu gran salvación,",
+          "para darme la luz",
+          "y tu gran salvación,",
           "Vertiste sangre inmaculada",
           "con la cual mi maldad,",
-          "al morir en la cruz, la borraste, Jesús."
+          "al morir en la cruz,",
+          "la borraste, Jesús."
         ]
       },
       {
@@ -11192,10 +11200,12 @@
         "lines": [
           "Tú eres el que diste a mi vida",
           "esa paz sin igual,",
-          "que en el mundo falaz, no la pude encontrar.",
+          "que en el mundo falaz,",
+          "no la pude encontrar.",
           "Por eso mi alma alegre te canta,",
           "disfrutando el amor",
-          "que en la cruz de dolor me extendiste, Jesús."
+          "que en la cruz de dolor",
+          "me extendiste, Jesús."
         ]
       }
     ],
@@ -11205,7 +11215,8 @@
           "Hoy yo te alabo, Señor,",
           "con todo mi corazón,",
           "Cordero, porque eres mi Dios",
-          "y mi buen Salvador que moriste por mí."
+          "y mi buen Salvador",
+          "que moriste por mí."
         ]
       }
     ],
