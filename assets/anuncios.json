@@ -1,21 +1,5 @@
 [
   {
-    "id": 1,
-    "titulo": "Reunión de Damas",
-    "fecha": "Sábado, 19 de septiembre",
-    "reflexion": "Las invitamos a compartir un tiempo especial como mujeres de Dios. ¡Las esperamos!",
-    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/damas.webp",
-    "fechaEvento": "2026-09-19 15:00"
-  },
-  {
-    "id": 2,
-    "titulo": "Reunión de Varones",
-    "fecha": "Sábado, 26 de septiembre",
-    "reflexion": "Los invitamos a compartir un tiempo especial como hombres de Dios. ¡Los esperamos!",
-    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/varones.webp",
-    "fechaEvento": "2026-09-26 15:00"
-  },
-  {
     "id": 3,
     "titulo": "Culto Dominical",
     "fecha": "Publicado hoy",
@@ -32,5 +16,20 @@
     "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/oracion-virtual.webp",
     "fechaEvento": "06:00",
     "recurrencia": "martes"
+  },
+  {
+    "id": 5,
+    "titulo": "Programa de Navidad",
+    "fecha": "Domingo, 20 de diciembre",
+    "reflexion": "Las invitamos a compartir un tiempo especial de Navidad. ¡En la tierra paz y buena voluntad!",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/programa-navidad.jpg",
+    "fechaEvento": "2026-12-20 9:30"
+  },
+  {
+    "id": 6,
+    "titulo": "Noches Navideñas",
+    "fecha": "Miércoles y Viernes, 2, 4, 9, 11, 16 y 18 de diciembre",
+    "reflexion": "Los invitamos a compartir un tiempo especial como hombres de Dios. ¡Los esperamos!",
+    "imagenUrl": "https://iglesiabautistasumapaz.org/assets/announcements/noches-navidenas.jpg"
   }
 ]
